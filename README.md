@@ -1,2 +1,2 @@
-# uh-its-devs
-"# mockup" 
+# Thymeleaf Spring boot demo
+"Fake product mockup" 
