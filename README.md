@@ -33,3 +33,5 @@ To build a deployable war file for local development, if preferred:
 
 You should have a deployable war file in the target directory.
 Deploy as usual in a servlet container, e.g. tomcat.
+
+To access the page the default url is localhost808:/dev/
