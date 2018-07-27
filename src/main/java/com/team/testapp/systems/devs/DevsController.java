@@ -1,4 +1,4 @@
-package edu.hawaii.its.es.devs;
+package com.team.testapp.systems.devs;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
