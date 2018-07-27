@@ -1,9 +1,5 @@
 .cards {
     height: auto;
     float: left;
-    width: 100%;
-}
-#float {
-    flaot: left;
-    max-height: 600px;
+    width: 30%;
 }
