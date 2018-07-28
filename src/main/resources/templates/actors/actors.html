@@ -3,80 +3,81 @@
 <head th:replace="header-items :: copy"></head>
 
 <body>
-    <!-- Navbar -->
-    <div th:replace="navbar :: copy"></div>
-    <!--  Content container -->
-    <div class="jumbotron" id="continer-margin">
-        <div class="container">
-            <h1 class="display-4">Actor Browser AngularJS Demo</h1>
-            <p class="lead" th:text="#{angulardemo.message}"></p>
-        </div>
-    </div>
-    <div class="container">
-        <ul class="nav nav-pills" data-tabs='pills'>
-            <li class="active nav-item"><a href="#allActors" data-toggle="pills" class='nav-link active'>Actors</a></li>
-            <!-- <li class="active nav-item"><a href="#maleActors" data-toggle="| filter:{gender: 'Male'}:true" class='nav-link'>Male Actors</a></li> -->
-            <!-- <li class="active nav-item"><a href="#femaleActors" data-toggle="pills" class='nav-link'>Female Actors</a></li> -->
-            <!-- <li role="presentation"><a href="#books" data-toggle="tab" class='label label-default'>Books</a></li>
+	<!-- Navbar -->
+	<div th:replace="navbar :: copy"></div>
+	<!--  Content container -->
+	<div class="jumbotron" id="continer-margin">
+		<div class="container">
+			<h1 class="display-4">Actor Browser AngularJS Demo</h1>
+			<p class="lead" th:text="#{angulardemo.message}"></p>
+		</div>
+	</div>
+	<div class="container">
+		<ul class="nav nav-pills" data-tabs='pills'>
+			<li class="active nav-item"><a href="#allActors" data-toggle="pills" class='nav-link active'>Actors</a></li>
+			<!-- <li class="active nav-item"><a href="#maleActors" data-toggle="| filter:{gender: 'Male'}:true" class='nav-link'>Male Actors</a></li> -->
+			<!-- <li class="active nav-item"><a href="#femaleActors" data-toggle="pills" class='nav-link'>Female Actors</a></li> -->
+			<!-- <li role="presentation"><a href="#books" data-toggle="tab" class='label label-default'>Books</a></li>
             <li role="presentation"><a href="#songs" data-toggle="tab" class='label label-default'>Songs</a></li> -->
-        </ul>
-        <div id='fav-tab-content' class='tab-content' style='padding-top: 1em;'>
-            <div class='tab-pane active' id='allActors'>
-                <div class='card-block'>
-                    <h3 class='tab-headings'>List of All Actors</h3>
-                </div>
-                <!-- Cards Start -->
-                <div ng-controller='ActorJsController'>
-                    <div class="input-group row mb-3 col-md-6">
-                        <input type="text" ng-model="search" class="form-control" placeholder="Search Actors" aria-label="Actor Search">
-                        <div class="input-group-append">
-                            <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
-                        </div>
-                        </input>
-                    </div>
-                    <div class="col-md-12 row">
-                        <span class="badge badge-info"><span class="align-middle">Actors Shown {{viewable.length}}</span></span>
-                    </div>
-                    <br/>
-                    <!-- | filter:{gender: search}:true -->
-                    <div class="cards" data-ng-repeat="a in actors | alpha | orderBy:'name' | filter:search as viewable">
-                        <div class="row col-md-12 col-sm-12 col-xs-12">
-                            <div class="card">
-                                <img class="card-img-top" ng-src="{{a.img}}"></img>
-                                <div class="card-body">
-                                    <h5 class="card-title">{{a.name}}</h5>
-                                    <p ng-controller="limit" class="card-text" ng-model="letterLimit">{{a.description | limitTo:letterLimit}} <a href="#">...</a></p>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">{{a.gender}}</li>
-                                        <li class="list-inline-item">{{a.height}}</li>
-                                    </ul>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">Hair:&nbsp;<b>{{a.hair}}</b></li>
-                                        <li class="list-inline-item">Eyes:&nbsp;<b>{{a.eyes}}</b></li>
-                                    </ul>
-                                    <span data-ng-repeat="t in a.traits">
+		</ul>
+		<div id='fav-tab-content' class='tab-content' style='padding-top: 1em;'>
+			<div class='tab-pane active' id='allActors'>
+				<div class='card-block'>
+					<h3 class='tab-headings'>List of All Actors</h3>
+				</div>
+				<!-- Cards Start -->
+				<div ng-controller='ActorJsController'>
+					<div class="input-group row mb-3 col-md-6">
+						<input type="text" ng-model="search" class="form-control" placeholder="Search Actors" aria-label="Actor Search">
+						<div class="input-group-append">
+							<span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
+						</div>
+						</input>
+					</div>
+					<div class="col-md-12 row">
+						<span class="badge badge-info"><span class="align-middle">Actors Shown {{viewable.length}}</span></span>
+					</div>
+
+					<!-- | filter:{gender: search}:true -->
+					<div data-ng-repeat="a in actorsMale | alpha | orderBy:'name' | filter:search as viewable">
+						<div class="col-sm-4 col-xs-12 col-lg-4 row cards">
+							<div class="card" style="width: 20rem;">
+								<div class="card-block">
+									<img class="card-img-top" ng-src="{{a.img}}"></img>
+									<div class="card-body">
+										<h5 class="card-title">{{a.name}}</h5>
+										<p ng-controller="limit" class="card-text" ng-model="letterLimit">{{a.description | limitTo:letterLimit}} <a href="#">...</a></p>
+										<ul class="list-inline">
+											<li class="list-inline-item">{{a.gender}}</li>
+											<li class="list-inline-item">{{a.height}}</li>
+										</ul>
+										<ul class="list-inline">
+											<li class="list-inline-item">Hair:&nbsp;<b>{{a.hair}}</b></li>
+											<li class="list-inline-item">Eyes:&nbsp;<b>{{a.eyes}}</b></li>
+										</ul>
+										<span data-ng-repeat="t in a.traits">
                                         <div class="badge badge-secondary">{{t}}</div>
                                     </span>
-                                </div>
-                                <div class="card-link card-footer">
-                                    <button type="button" class="btn btn-link btn-lg">
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                </button>
-                                    <button type="button" class="btn btn-link btn-lg">
-                                    <i class="fa fa-info" aria-hidden="true"></i>
-                                </button>
-                                    <button type="button" class="btn btn-link btn-lg">
-                                    <i class="fa fa-bars" aria-hidden="true"></i>
-                                </button>
-                                </div>
-                            </div>
-                        </div>
-                        <br/>
-                    </div>
-                </div>
-                <!-- Cards End -->
-            </div>
-            <!-- <div class='tab-pane' id='films'>
+									</div>
+									<div class="card-link card-footer">
+										<button type="button" class="btn btn-link btn-lg">
+                                    	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                	</button>
+										<button type="button" class="btn btn-link btn-lg">
+                                    	<i class="fa fa-info" aria-hidden="true"></i>
+                                	</button>
+										<button type="button" class="btn btn-link btn-lg">
+                                    	<i class="fa fa-bars" aria-hidden="true"></i>
+                                	</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Cards End -->
+			</div>
+			<!-- <div class='tab-pane' id='films'>
                 <div class='card-block'>
                     <h3>Favorite Films</h3>
                     <p class="lead text-muted">
@@ -91,11 +92,11 @@
                     </table>
                 </div>
             </div> -->
-        </div>
-    </div>
-    <!-- / Content container. -->
+		</div>
+	</div>
+	<!-- / Content container. -->
 
-    <div th:replace="scripts :: copy"></div>
+	<div th:replace="scripts :: copy"></div>
 
 </body>
 

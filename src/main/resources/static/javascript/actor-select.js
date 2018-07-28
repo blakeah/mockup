@@ -4,7 +4,7 @@ var faveApp = angular.module('faveApp', ['angular-alphaOrganizer' , 'limitTo']);
 
 (function() {
     function ActorJsController($scope) {
-        $scope.actors = [
+        $scope.actorsMale = [
             {   name: 'Frankie Burke',
                 gender: 'Male',
                 description: 'There\'s more than meets the eye in the case of Frankie Burke, but at the very least you\'ll find out hes dutiful and contemplative. Of course hes also lovable, gracious and honest, but in smaller doses and they\'re often spoiled by habits of being agonizing as well. His dutiful nature though, this is what he\'s kind of cherished for. There are many times when friends count on this and his insight when they\'re in need of support.',
@@ -49,7 +49,7 @@ var faveApp = angular.module('faveApp', ['angular-alphaOrganizer' , 'limitTo']);
             {   name: 'Madison Doyle',
                 gender: 'Female',
                 description: 'A lot can be said of Madison Doyle, but the biggest two things to know are that she\'s romantic and exciting. Of course shes also active, focused and charismatic, but theyre tainted by and mixed with habits of being lazy as well.  Her romantic nature though, this is what she\'s so well-liked for. People regularly count on this and her focus when they\'re feeling down.',
-                height: '6\' 2\"',
+                height: '4\' 11\"',
                 img: '../images/profile-female.jpg',
                 hair: 'White',
                 eyes: 'Blue',
@@ -107,7 +107,7 @@ var faveApp = angular.module('faveApp', ['angular-alphaOrganizer' , 'limitTo']);
 
     angular.module('limitTo', [])
     .controller('limit', ['$scope', function($scope) {
-      $scope.letterLimit = 200;
+      $scope.letterLimit = 140;
     }]);
 
     // function FilmJsController($scope) {
