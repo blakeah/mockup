@@ -25,6 +25,11 @@ public class DevsController {
         System.out.println ("contact-page");
         return "help/contact";
     }
+    @GetMapping("/actors/actors")
+    public String actors (){
+        System.out.println ("actors-page");
+        return "actors/actors";
+    }
 
     @GetMapping(value = {"/{page}"})
     public String page (@PathVariable String page){

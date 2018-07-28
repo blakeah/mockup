@@ -1,98 +1,100 @@
 // Element locators
-
-
 'use strict';
-var faveApp = angular.module('faveApp', ['angular-toArrayFilter']);
+var faveApp = angular.module('faveApp', ['angular-alphaOrganizer' , 'limitTo']);
 
 (function() {
-
     function ActorJsController($scope) {
         $scope.actors = [
-            {   name: 'John Smith',
+            {   name: 'Frankie Burke',
                 gender: 'Male',
-                description: 'Standard male model actor who is good in all roles.  This actor will has experience in Broadway Musicals and is very talented',
-                height: '5\" 10\'',
-                img: 'images/profile-male.jpg',
+                description: 'There\'s more than meets the eye in the case of Frankie Burke, but at the very least you\'ll find out hes dutiful and contemplative. Of course hes also lovable, gracious and honest, but in smaller doses and they\'re often spoiled by habits of being agonizing as well. His dutiful nature though, this is what he\'s kind of cherished for. There are many times when friends count on this and his insight when they\'re in need of support.',
+                height: '6\' 2\"',
+                img: '../images/profile-male.jpg',
                 hair: 'Black',
                 eyes: 'Brown',
                 traits : [
                     'Shy',
-                    'Nerdy'
+                    'Nerdy',
+                    'Funny'
                 ]
             },
-            {   name: 'Bob Green',
+            {   name: 'Nathan Hunt',
                 gender: 'Male',
-                description: 'This actor will has experience in Broadway Musicals and is very talented.  Standard male model actor who is good in all roles.',
-                height: '5\" 11\'',
-                img: 'images/profile-male.jpg',
+                description: 'There\'s more than meets the eye in the case of Nathan Hunt, but two things you\'ll never forget are that hes energetic and protective. Of course he\'s also clever, cooperative and active, but those are often overshadowed by tendencies of being crude as well.',
+                height: '5\' 11\"',
+                img: '../images/profile-male.jpg',
                 hair: 'Brown',
                 eyes: 'Hazel',
                 traits : [
                     'Athletic',
-                    'Slim-Build'
+                    'Slim-Build',
+                    'Serious',
+                    'Action'
                 ]
             },
-            {   name: 'Stan Brown',
+            {   name: 'Owen Lane',
                 gender: 'Male',
-                description: 'This actor will has experience in Broadway Musicals and is very talented.  Standard male model actor who is good in all roles.',
-                height: '5\" 8\'',
-                img: 'images/profile-male.jpg',
+                description: 'Few know the true Owen Lane, but the two traits most people enjoy the most are that he\'s individualistic and organized. Of course he\'s also reflective, forgiving and witty, but these are in a way balance by being egocentric as well.  His individualism though, this is what he\'s often admired for. Friend\'s tend to count on this and his intuition whenever they need cheering up.',
+                height: '6\' 1\"',
+                img: '../images/profile-male.jpg',
                 hair: 'Bald',
                 eyes: 'Blue',
                 traits : [
                     'Serious',
                     'Bulky',
-                    'Intimidating'
+                    'Intimidating',
+                    'Action'
                 ]
             },
-            {   name: 'Caroline Yellow',
+            {   name: 'Madison Doyle',
                 gender: 'Female',
-                description: 'This actor will has experience in Broadway Musicals and is very talented.  Standard female model actor who is good in all roles.',
-                height: '5\" 4\'',
-                img: 'images/profile-female.jpg',
+                description: 'A lot can be said of Madison Doyle, but the biggest two things to know are that she\'s romantic and exciting. Of course shes also active, focused and charismatic, but theyre tainted by and mixed with habits of being lazy as well.  Her romantic nature though, this is what she\'s so well-liked for. People regularly count on this and her focus when they\'re feeling down.',
+                height: '6\' 2\"',
+                img: '../images/profile-female.jpg',
                 hair: 'White',
                 eyes: 'Blue',
                 traits : [
-                    'Shy1231',
-                    'someotherone'
+                    'Snarky',
+                    'Witty',
+                    'Comedic',
+                    'Elderly'
                 ]
             },
-            {   name: 'Stacie Blue',
+            {   name: 'Ava Evans',
                 gender: 'Female',
-                description: 'This actor will has experience in Broadway Musicals and is very talented.  Standard female model actor who is good in all roles.',
-                height: '5\" 5\'',
-                img: 'images/profile-female.jpg',
-                hair: 'black',
+                description: 'Many things can be said of Ava Evans, but at the very least you\'ll find out shes spontaneous and playful. Of course she\'s also contemplative, good-natured and enthusiastic, but in a way they\'re lesser traits and tained by behaviors of being venomous as well.',
+                height: '5\' 5\"',
+                img: '../images/profile-female.jpg',
+                hair: 'Black',
                 eyes: 'Green',
                 traits : [
-                    'Shy1231',
-                    'someotherone'
+                    'Composed',
+                    'Calming',
+                    'Quiet'
                 ]
             },
-            {   name: 'Anya Maroon',
+            {   name: 'Kayla Rogers',
                 gender: 'Female',
-                description: 'This actor will has experience in Broadway Musicals and is very talented.  Standard female model actor who is good in all roles.',
-                height: '5\" 9\'',
-                img: 'images/profile-female.jpg',
+                description: 'Looks can be deceiving when it comes Kayla Rogers, but if there\'s anything you should know it\'s that she\'s open and leaderly. Of course she\'s also reflective, incorruptible and intuitive, but in a way they\'re lesser traits and tained by behaviors of being hostile as well.  Her openness though, this is what she\'s so well-liked for. There are many times when friends count on this and her energy whenever they need cheering up.',
+                height: '5\' 9\"',
+                img: '../images/profile-female.jpg',
                 hair: 'Brown',
                 eyes: 'Blue',
                 traits : [
-                    'Shy1231',
-                    'someotherone'
+                    'Comedic',
+                    'Side-kick'
                 ]
             },
         ];
     }
     faveApp.controller("ActorJsController", ActorJsController);
 
-    angular.module('angular-toArrayFilter', [])
-
+    angular.module('angular-alphaOrganizer', [])
     .filter('alpha', function () {
       return function (obj, addKey) {
         if (!(obj instanceof Object)) {
           return obj;
         }
-
         if ( addKey === false ) {
           return Object.values(obj);
         } else {
@@ -102,6 +104,11 @@ var faveApp = angular.module('faveApp', ['angular-toArrayFilter']);
         }
       };
     });
+
+    angular.module('limitTo', [])
+    .controller('limit', ['$scope', function($scope) {
+      $scope.letterLimit = 200;
+    }]);
 
     // function FilmJsController($scope) {
     //     $scope.films = [
