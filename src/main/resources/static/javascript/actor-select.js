@@ -4,7 +4,7 @@ var faveApp = angular.module('faveApp', ['angular-alphaOrganizer' , 'limitTo']);
 
 (function() {
     function ActorJsController($scope) {
-        $scope.actorsMale = [
+        $scope.actors = [
             {   name: 'Frankie Burke',
                 gender: 'Male',
                 description: 'There\'s more than meets the eye in the case of Frankie Burke, but at the very least you\'ll find out hes dutiful and contemplative. Of course hes also lovable, gracious and honest, but in smaller doses and they\'re often spoiled by habits of being agonizing as well. His dutiful nature though, this is what he\'s kind of cherished for. There are many times when friends count on this and his insight when they\'re in need of support.',
@@ -88,56 +88,4 @@ var faveApp = angular.module('faveApp', ['angular-alphaOrganizer' , 'limitTo']);
         ];
     }
     faveApp.controller("ActorJsController", ActorJsController);
-
-    angular.module('angular-alphaOrganizer', [])
-    .filter('alpha', function () {
-      return function (obj, addKey) {
-        if (!(obj instanceof Object)) {
-          return obj;
-        }
-        if ( addKey === false ) {
-          return Object.values(obj);
-        } else {
-          return Object.keys(obj).map(function (key) {
-            return Object.defineProperty(obj[key], '$key', { enumerable: false, value: key});
-          });
-        }
-      };
-    });
-
-    angular.module('limitTo', [])
-    .controller('limit', ['$scope', function($scope) {
-      $scope.letterLimit = 140;
-    }]);
-
-    // function FilmJsController($scope) {
-    //     $scope.films = [
-    //         {   title: 'Citizen Kane',
-    //             director: 'Orson Welles',
-    //             year: 1900
-    //         },
-    //     ];
-    // }
-    // faveApp.controller("FilmJsController", FilmJsController);
-    //
-    // function BookJsController($scope) {
-    //     $scope.books = [
-    //         {   title: 'Lolita',
-    //             author: 'Vladimir Nabokov'
-    //         },
-    //         {   title: 'Nineteen Eighty Four',
-    //             author: 'George Orwell'
-    //         },
-    //     ];
-    // }
-    // faveApp.controller("BookJsController", BookJsController);
-    //
-    // function SongJsController($scope) {
-    //     $scope.songs = [
-    //         {title: 'Sheela-Na-Gig', artist: 'PJ Harvey'},
-    //         {title: 'Sky Saw', artist: 'Brian Eno'},
-    //     ];
-    // }
-    // faveApp.controller("SongJsController", SongJsController);
-
 })();
