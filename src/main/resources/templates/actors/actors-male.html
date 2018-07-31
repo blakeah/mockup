@@ -1,0 +1,84 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en" ng-app="faveApp">
+
+<head th:replace="header-items :: copy"></head>
+
+<body>
+    <!-- Navbar -->
+    <div th:replace="navbar :: copy"></div>
+    <!--  Content container -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Actor Browser AngularJS Demo</h1>
+            <p class="lead" th:text="#{angulardemo.message}"></p>
+        </div>
+    </div>
+    <div class="container">
+        <!-- MODAL HTML -->
+        <!-- <div ng-controller="modalCtrl">
+            <button type="button" class="btn btn-default" ng-click="open()">Modal Open!</button>
+        </div> -->
+        <!-- END MODAL HTML -->
+        <div ng-controller='MaleActorJsController'>
+            <div class='card-block'>
+                <h3 class='tab-headings'>List of All Male Actors</h3>
+            </div>
+            <!-- Cards Start -->
+            <div class="input-group row mb-3 col-md-6">
+                <input type="text" ng-model="search" class="form-control" placeholder="Search Actors" aria-label="Actor Search">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
+                </div>
+                </input>
+            </div>
+            <div class="col-md-12 row">
+                <span class="badge badge-info"><span class="align-middle">Actors Shown {{viewable.length}}</span></span>
+            </div>
+            <!-- | filter:{gender: search}:true -->
+            <!--For Male Select -->
+
+            <div data-ng-repeat="m in actor | alpha | orderBy:'name' | filter:search as viewable">
+                <div class="col-sm-4 col-xs-12 col-lg-4 row cards">
+                    <div class="card" style="width: 20rem;">
+                        <div class="card-block">
+                            <img class="card-img-top" ng-src="{{m.img}}"></img>
+                            <div class="card-body">
+                                <h5 class="card-title">{{m.name}}</h5>
+
+                                <p ng-controller="limit" class="card-text" ng-model="letterLimit">{{m.description | limitTo:letterLimit}} <a href="#" ng-if="m.description.length >= 0">...</a></p>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">{{m.gender}}</li>
+                                    <li class="list-inline-item">{{m.height}}</li>
+                                </ul>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">Hair:&nbsp;<b>{{m.hair}}</b></li>
+                                    <li class="list-inline-item">Eyes:&nbsp;<b>{{m.eyes}}</b></li>
+                                </ul>
+                                <span data-ng-repeat="t in m.traits">
+                                        <div class="badge badge-secondary">{{t}}</div>
+                                    </span>
+                            </div>
+                            <div class="card-link card-footer">
+                                <button type="button" class="btn btn-link btn-lg">
+                                    	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                	</button>
+                                <button type="button" class="btn btn-link btn-lg">
+                                    	<i class="fa fa-info" aria-hidden="true"></i>
+                                	</button>
+                                <button type="button" class="btn btn-link btn-lg">
+                                    	<i class="fa fa-bars" aria-hidden="true"></i>
+                                	</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cards End -->
+    </div>
+    <!-- / Content container. -->
+
+    <div th:replace="scripts :: copy"></div>
+
+</body>
+
+</html>

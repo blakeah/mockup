@@ -25,10 +25,20 @@ public class DevsController {
         System.out.println ("contact-page");
         return "help/contact";
     }
-    @GetMapping("/actors/actors")
-    public String actors (){
-        System.out.println ("actors-page");
-        return "actors/actors";
+    @GetMapping("/actors/all-actors")
+    public String allActors (){
+        System.out.println ("all-actors");
+        return "actors/all-actors";
+    }
+    @GetMapping("/actors/actors-male")
+    public String actorsMale (){
+        System.out.println ("actors-male");
+        return "actors/actors-male";
+    }
+    @GetMapping("/actors/actors-female")
+    public String actorsFemale (){
+        System.out.println ("actors-female");
+        return "actors/actors-female";
     }
 
     @GetMapping(value = {"/{page}"})
