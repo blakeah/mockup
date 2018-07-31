@@ -1,16 +1,15 @@
-<script type="text/ng-template" id="actorContentId"  th:fragment="copy">
+<script type="text/ng-template" id="actorView" th:fragment="copy">
+    <!-- Modal Header -->
     <div class="modal-header">
-        <h3 class="modal-title">I'm a modal!</h3>
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
     </div>
+    <!-- Modal body -->
     <div class="modal-body">
-        <ul>
-            <li ng-repeat="item in items">
-        <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
-    </li>
-        </ul>
+        Modal body..
     </div>
+    <!-- Modal footer -->
     <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
     </div>
 </script>

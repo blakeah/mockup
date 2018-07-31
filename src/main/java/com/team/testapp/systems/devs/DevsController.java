@@ -25,17 +25,16 @@ public class DevsController {
         System.out.println ("contact-page");
         return "help/contact";
     }
-    @GetMapping("/actors/actors-male")
-    public String actorsMale (){
-        System.out.println ("actors-male");
-        return "actors/actors-male";
+    @GetMapping("/actors/actors")
+    public String actors (){
+        System.out.println ("actors");
+        return "actors/actors";
     }
-    @GetMapping("/actors/actors-female")
-    public String actorsFemale (){
-        System.out.println ("actors-female");
-        return "actors/actors-female";
-    }
-
+    // @GetMapping("/actors/actorView")
+    // public String actorView (){
+    //     System.out.println ("actorView");
+    //     return "actors/actorView";
+    // }
     @GetMapping(value = {"/{page}"})
     public String page (@PathVariable String page){
         System.out.println ("page: " + page);

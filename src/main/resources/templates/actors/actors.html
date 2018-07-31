@@ -18,42 +18,55 @@
             <button type="button" class="btn btn-default" ng-click="open()">Modal Open!</button>
         </div> -->
         <!-- END MODAL HTML -->
-        <div ng-controller='MaleActorJsController'>
+        <div ng-controller='ActorJsController'>
+            <script th:replace="actors/actorView  :: copy"></script>
             <div class='card-block'>
-                <h3 class='tab-headings'>List of All Male Actors</h3>
+                <h3 class='tab-headings'>Actors Database</h3>
             </div>
             <!-- Cards Start -->
-            <div class="input-group row mb-3 col-md-6">
-                <input type="text" ng-model="search" class="form-control" placeholder="Search Actors" aria-label="Actor Search">
+            <div class="input-group row mb-8 col-md-8 col-sm-12 col-xs-12">
+                <input type="text" ng-model="search.$" class="form-control" placeholder="Search Actors" aria-label="Actor Search">
                 <div class="input-group-append">
                     <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
                 </div>
                 </input>
             </div>
+            <div class="btn row">
+                <label>
+                    <button class="btn btn-sm btn-primary" ng-click="orderByMe('name')">Order By Name</button>
+                </label>
+                <label>
+                    <button class="btn btn-sm btn-primary" ng-click="orderByMe('gender')">Sort Female</button>
+                </label>
+                <label>
+                    <button class="btn btn-sm btn-primary" ng-click="orderByMe('-gender')">Sort Male</button>
+                </label>
+            </div>
+            <br/><br/>
+
             <div class="col-md-12 row">
                 <span class="badge badge-info"><span class="align-middle">Actors Shown {{viewable.length}}</span></span>
             </div>
             <!-- | filter:{gender: search}:true -->
             <!--For Male Select -->
-
-            <div data-ng-repeat="m in actor | alpha | orderBy:'name' | filter:search as viewable">
+            <div data-ng-repeat="a in actors | alpha | orderBy:myOrderBy | filter:search as viewable">
                 <div class="col-sm-4 col-xs-12 col-lg-4 row cards">
                     <div class="card" style="width: 20rem;">
                         <div class="card-block">
-                            <img class="card-img-top" ng-src="{{m.img}}"></img>
+                            <img class="card-img-top" ng-src="{{a.img}}"></img>
                             <div class="card-body">
-                                <h5 class="card-title">{{m.name}}</h5>
+                                <h5 class="card-title">{{a.name}}</h5>
 
-                                <p ng-controller="limit" class="card-text" ng-model="letterLimit">{{m.description | limitTo:letterLimit}} <a href="#" ng-if="m.description.length >= 0">...</a></p>
+                                <p ng-controller="limit" class="card-text" ng-model="letterLimit">{{a.description | limitTo:letterLimit}} <a href="#">...</a></p>
                                 <ul class="list-inline">
-                                    <li class="list-inline-item">{{m.gender}}</li>
-                                    <li class="list-inline-item">{{m.height}}</li>
+                                    <li class="list-inline-item">{{a.gender}}</li>
+                                    <li class="list-inline-item">{{a.height}}</li>
                                 </ul>
                                 <ul class="list-inline">
-                                    <li class="list-inline-item">Hair:&nbsp;<b>{{m.hair}}</b></li>
-                                    <li class="list-inline-item">Eyes:&nbsp;<b>{{m.eyes}}</b></li>
+                                    <li class="list-inline-item">Hair:&nbsp;<b>{{a.hair}}</b></li>
+                                    <li class="list-inline-item">Eyes:&nbsp;<b>{{a.eyes}}</b></li>
                                 </ul>
-                                <span data-ng-repeat="t in m.traits">
+                                <span data-ng-repeat="t in a.traits">
                                         <div class="badge badge-secondary">{{t}}</div>
                                     </span>
                             </div>
@@ -61,12 +74,9 @@
                                 <button type="button" class="btn btn-link btn-lg">
                                     	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                 	</button>
-                                <button type="button" class="btn btn-link btn-lg">
-                                    	<i class="fa fa-info" aria-hidden="true"></i>
-                                	</button>
-                                <button type="button" class="btn btn-link btn-lg">
-                                    	<i class="fa fa-bars" aria-hidden="true"></i>
-                                	</button>
+                                <button type="button" class="btn btn-link btn-lg" ng-click="add()">
+                                    	<i class="fa fa-info" aria-hidden="true" ></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -77,7 +87,7 @@
     </div>
     <!-- / Content container. -->
 
-    <div th:replace="scripts :: copy"></div>
+    <div th:replace="footer-items :: copy"></div>
 
 </body>
 
