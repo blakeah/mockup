@@ -36,7 +36,7 @@
             <!-- | filter:{gender: search}:true -->
 
             <!--For Female Select -->
-            <div data-ng-repeat="f in actress | alpha | orderBy:'name' | filter:search as viewable">
+            <div data-ng-repeat="f in actor | alpha | orderBy:'name' | filter:search as viewable">
                 <div class="col-sm-4 col-xs-12 col-lg-4 row cards">
                     <div class="card" style="width: 20rem;">
                         <div class="card-block">
@@ -49,8 +49,8 @@
                                     <li class="list-inline-item">{{f.height}}</li>
                                 </ul>
                                 <ul class="list-inline">
-                                    <li class="list-inline-item" ng-if="f.hair.length >= 0">Hair:&nbsp;<b>{{f.hair}}</b></li>
-                                    <li class="list-inline-item" ng-if="f.hair.length >= 0">Eyes:&nbsp;<b>{{f.eyes}}</b></li>
+                                    <li class="list-inline-item">Hair:&nbsp;<b>{{f.hair}}</b></li>
+                                    <li class="list-inline-item">Eyes:&nbsp;<b>{{f.eyes}}</b></li>
                                 </ul>
                                 <span data-ng-repeat="t in f.traits">
                                         <div class="badge badge-secondary">{{t}}</div>

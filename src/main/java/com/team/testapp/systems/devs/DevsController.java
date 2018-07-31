@@ -25,11 +25,6 @@ public class DevsController {
         System.out.println ("contact-page");
         return "help/contact";
     }
-    @GetMapping("/actors/all-actors")
-    public String allActors (){
-        System.out.println ("all-actors");
-        return "actors/all-actors";
-    }
     @GetMapping("/actors/actors-male")
     public String actorsMale (){
         System.out.println ("actors-male");

@@ -16,17 +16,15 @@
           <li class="nav-item">
             <a class="nav-link" th:href="@{/about}">About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actors Listing</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" th:href="@{/help/contact}">Contact</a>
-              <a class="dropdown-item" th:href="@{/actors/all-actors}">All Actors</a>
               <a class="dropdown-item" th:href="@{/actors/actors-male}">Male Actors</a>
               <a class="dropdown-item" th:href="@{/actors/actors-female}">Female Actors</a>
             </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/help/contact}">Contact</a>
           </li>
         </ul>
       </div>
