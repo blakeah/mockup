@@ -50,14 +50,14 @@
             <!-- | filter:{gender: search}:true -->
             <!--For Male Select -->
             <div data-ng-repeat="a in actors | alpha | orderBy:myOrderBy | filter:search as viewable">
-                <div class="col-sm-4 col-xs-12 col-lg-4 row cards">
+                <div class="col-sm-4 col-12 col-lg-4 row cards">
                     <div class="card" style="width: 20rem;">
                         <div class="card-block">
                             <img class="card-img-top" ng-src="{{a.img}}"></img>
                             <div class="card-body">
                                 <h5 class="card-title">{{a.name}}</h5>
 
-                                <p ng-controller="limit" class="card-text" ng-model="letterLimit">{{a.description | limitTo:letterLimit}} <a href="" ng-click="view()">...</a></p>
+                                <p ng-controller="limit" class="card-text" ng-model="letterLimit">{{a.description | limitTo:letterLimit}} <a href="" ng-click="view(a)">...</a></p>
                                 <ul class="list-inline">
                                     <li class="list-inline-item">{{a.gender}}</li>
                                     <li class="list-inline-item">{{a.height}}</li>
@@ -74,7 +74,7 @@
                                 <button type="button" class="btn btn-link btn-lg">
                                     	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                 	</button>
-                                <button type="button" class="btn btn-link btn-lg" ng-click="view(data)">
+                                <button type="button" class="btn btn-link btn-lg" ng-click="view(a)">
                                     	<i class="fa fa-eye" aria-hidden="true"></i>
                                 </button>
                             </div>

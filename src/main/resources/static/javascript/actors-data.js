@@ -98,13 +98,27 @@ function ActorJsController($scope, $uibModal) {
         $scope.myOrderBy = m;
     }
 
-    $scope.view = function(data) {
+    $scope.view = function(a) {
+        $scope.a = a;
+        console.log('actor', a);
         var modalInstance = $uibModal.open({
             animation: true,
             templateUrl: 'actorView',
             scope: $scope,
-            size: 'lg'
+            size: 'lg',
+            // resolve: {
+            //     hair: function() {
+            //         return $scope.a.hair;
+            //     }
+            // }
         });
+        //
+        // modalInstance.result.then(function(data) {
+        //     console.log('come back from modal', data);
+        // }, function() {
+        //     console.log('Add Application dismissed at: ' + new Date());
+        // });
+
         $scope.close = function () {
             modalInstance.close();
         };
