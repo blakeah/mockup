@@ -106,19 +106,7 @@ function ActorJsController($scope, $uibModal) {
             templateUrl: 'actorView',
             scope: $scope,
             size: 'lg',
-            // resolve: {
-            //     hair: function() {
-            //         return $scope.a.hair;
-            //     }
-            // }
         });
-        //
-        // modalInstance.result.then(function(data) {
-        //     console.log('come back from modal', data);
-        // }, function() {
-        //     console.log('Add Application dismissed at: ' + new Date());
-        // });
-
         $scope.close = function () {
             modalInstance.close();
         };
