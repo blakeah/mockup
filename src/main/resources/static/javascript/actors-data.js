@@ -98,19 +98,16 @@ function ActorJsController($scope, $uibModal) {
         $scope.myOrderBy = m;
     }
 
-    $scope.random = function(array) {
-        return array.sort(function() {
-            return  0.5 - Math.random();
-        });
-    }
-    
-    $scope.add = function() {
-        console.log("working");
+    $scope.view = function(data) {
         var modalInstance = $uibModal.open({
             animation: true,
             templateUrl: 'actorView',
-            scope: $scope
+            scope: $scope,
+            size: 'lg'
         });
+        $scope.close = function () {
+            modalInstance.close();
+        };
     };
 }
 faveApp.controller("ActorJsController", ActorJsController);

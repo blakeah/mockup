@@ -57,7 +57,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{a.name}}</h5>
 
-                                <p ng-controller="limit" class="card-text" ng-model="letterLimit">{{a.description | limitTo:letterLimit}} <a href="#">...</a></p>
+                                <p ng-controller="limit" class="card-text" ng-model="letterLimit">{{a.description | limitTo:letterLimit}} <a href="" ng-click="view()">...</a></p>
                                 <ul class="list-inline">
                                     <li class="list-inline-item">{{a.gender}}</li>
                                     <li class="list-inline-item">{{a.height}}</li>
@@ -68,14 +68,14 @@
                                 </ul>
                                 <span data-ng-repeat="t in a.traits">
                                         <div class="badge badge-secondary">{{t}}</div>
-                                    </span>
+                                </span>
                             </div>
                             <div class="card-link card-footer">
                                 <button type="button" class="btn btn-link btn-lg">
                                     	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                 	</button>
-                                <button type="button" class="btn btn-link btn-lg" ng-click="add()">
-                                    	<i class="fa fa-info" aria-hidden="true" ></i>
+                                <button type="button" class="btn btn-link btn-lg" ng-click="view(data)">
+                                    	<i class="fa fa-eye" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>

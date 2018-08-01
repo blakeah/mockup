@@ -27,3 +27,4 @@
     height: 250px;
     overflow-y: auto;
 }
+.modal-open {overflow-y: auto}
