@@ -18,8 +18,14 @@
             <button type="button" class="btn btn-default" ng-click="open()">Modal Open!</button>
         </div> -->
         <!-- END MODAL HTML -->
-        <div ng-controller='ActorJsController'>
+        <div ng-controller='actorsController'>
             <script th:replace="actors/actorView  :: copy"></script>
+            <!-- <div>
+                <div data-ng-repeat="v in actors">
+                <p>The name is {{v.name}}</p></div>
+                <p>The ID is {{greeting.id}}</p>
+                <p>The content is {{greeting.content}}</p>
+            </div> -->
             <div class='card-block'>
                 <h3 class='tab-headings'>Actors Database</h3>
             </div>
@@ -50,6 +56,7 @@
             <!-- | filter:{gender: search}:true -->
             <!--For Male Select -->
             <div data-ng-repeat="a in actors | orderBy:myOrderBy | filter:search as viewable">
+
                 <div class="col-sm-4 col-12 col-lg-4 row cards">
                     <div class="card" style="width: 20rem;">
                         <div class="card-block">

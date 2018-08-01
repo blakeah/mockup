@@ -1,4 +1,8 @@
-function ActorJsController($scope, $uibModal) {
+// Element locators
+var faveApp = angular.module('faveApp', ['ui.bootstrap' , 'limitTo']);
+
+function actorsController($scope, $http, $uibModal) {
+
     $scope.actors = [{
             id: 0001,
             name: 'Nathan Hunt',
@@ -91,16 +95,38 @@ function ActorJsController($scope, $uibModal) {
                 'Side-kick'
             ]
         },
-
     ];
+
+    $http.get('http://rest-service.guides.spring.io/greeting').
+        then(function(response) {
+            $scope.greeting = response.data;
+    });
+
+    $http.get("http://localhost:8080/dev/api/actors").
+        then(function(response) {
+            $scope.actors = response.data;
+    });
+
+    // $http.get(encodeURI("http://localhost:8080/dev/api/actors")).
+    // .success(function(response) {
+    //         $scope.somevar = response;
+    // })
+    // .error(function(data, status) {
+    //     console.log('Error in status: ', status);
+    // });
+
+    // $http.get(encodeURI("http://localhost:8080/dev/api/actors"))
+    //     .success(function(response) {
+    //         $scope.somevar = response;
+    // })
+    // $http.get('http://localhost:8080/dev/api/actors');
 
     $scope.orderByMe = function(m) {
         $scope.myOrderBy = m;
-    }
+    };
 
     $scope.view = function(a) {
         $scope.a = a;
-        console.log('actor', a);
         var modalInstance = $uibModal.open({
             animation: true,
             templateUrl: 'actorView',
@@ -112,4 +138,4 @@ function ActorJsController($scope, $uibModal) {
         };
     };
 }
-faveApp.controller("ActorJsController", ActorJsController);
+faveApp.controller("actorsController", actorsController);
