@@ -7,13 +7,8 @@
      "height" : "5 11\"",
 	 "img" : "../images/profile-male.jpg",
      "hair" : "Brown",
-     "eyes" : "Hazel",
-	 "traits" : [
-		 "Athletic",
-	     "Slim Build",
-		 "Serious",
-		 "Action"
-	 ]
+     "eyes" : "Hazel"
+
 	},
 	{
 		 "name" : "Nathan two",
