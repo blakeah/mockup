@@ -1,0 +1,42 @@
+.margin-top {
+    margin-top: 15px;
+}
+
+.extend {
+    min-height: 320px;
+}
+
+.fade.in {
+    opacity: 1;
+}
+
+.modal.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.modal-backdrop.in {
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+.modal {
+    display: block !important;
+    /* I added this to see the modal, you don't need this */
+}
+
+/* Important part */
+
+.modal-dialog {
+    overflow-y: initial !important
+}
+
+.modal-body {
+    height: 250px;
+    overflow-y: auto;
+}
+
+.modal-open {
+    overflow-y: auto
+}
