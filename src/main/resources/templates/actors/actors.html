@@ -3,91 +3,82 @@
 <head th:replace="header-items :: copy"></head>
 
 <body>
-    <!-- Navbar -->
-    <div th:replace="navbar :: copy"></div>
-    <!--  Content container -->
-    <div class="jumbotron">
-        <div class="container">
-            <h1 class="display-4">Actor Browser AngularJS Demo</h1>
-            <p class="lead" th:text="#{angulardemo.message}"></p>
-        </div>
-    </div>
-    <div class="container">
-        <!-- MODAL HTML -->
-        <!-- <div ng-controller="modalCtrl">
-            <button type="button" class="btn btn-default" ng-click="open()">Modal Open!</button>
-        </div> -->
-        <!-- END MODAL HTML -->
-        <div ng-controller='actorsController'>
-            <script th:replace="actors/actorView  :: copy"></script>
-            <div class='card-block'>
-                <h3 class='tab-headings'>Actors Database</h3>
-            </div>
-            <!-- Cards Start -->
-            <div class="input-group row mb-8 col-md-8 col-sm-12 col-xs-12">
-                <input type="text" ng-model="search.$" class="form-control" placeholder="Search Actors" aria-label="Actor Search">
-                <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
-                </div>
-                </input>
-            </div>
-            <div class="btn row">
-                <label>
+	<!-- Navbar -->
+	<div th:replace="navbar :: copy"></div>
+	<!--  Content container -->
+	<div class="jumbotron">
+		<div class="container">
+			<h1 class="display-4">Actor Browser AngularJS Demo</h1>
+			<p class="lead" th:text="#{angulardemo.message}"></p>
+		</div>
+	</div>
+	<div class="container">
+		<div ng-controller='actorsController'>
+			<script th:replace="actors/actorView  :: copy"></script>
+			<div class='card-block'>
+				<h3 class='tab-headings'>Actors Database</h3>
+			</div>
+			<!-- Cards Start -->
+			<div class="input-group row mb-8 col-md-8 col-sm-12 col-xs-12">
+				<input type="text" ng-model="search.$" class="form-control" placeholder="Search Actors" aria-label="Actor Search">
+				<div class="input-group-append">
+					<span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
+				</div>
+				</input>
+			</div>
+			<div class="btn row">
+				<label>
                     <button class="btn btn-sm btn-primary" ng-click="orderByMe('name')">Order By Name</button>
                 </label>
-                <label>
+				<label>
                     <button class="btn btn-sm btn-primary" ng-click="orderByMe('gender')">Sort Female</button>
                 </label>
-                <label>
+				<label>
                     <button class="btn btn-sm btn-primary" ng-click="orderByMe('-gender')">Sort Male</button>
                 </label>
-            </div>
-            <br/><br/>
-
-            <div class="col-md-12 row">
-                <span class="badge badge-info"><span class="align-middle">Actors Shown {{viewable.length}}</span></span>
-            </div>
-            <!-- | filter:{gender: search}:true -->
-            <!--For Male Select -->
-            <div data-ng-repeat="a in actors | orderBy:myOrderBy | filter:search as viewable">
-                <div class="col-sm-4 col-12 col-lg-4 row cards">
-                    <div class="card" style="width: 20rem;">
-                        <div class="card-block">
-                            <img class="card-img-top" ng-src="{{a.img}}"></img>
-                            <div class="card-body">
-                                <h5 class="card-title">{{a.name}}</h5>
-                                <p ng-controller="limit" class="card-text" ng-model="letterLimit">{{a.description | limitTo:letterLimit}} <a href="" ng-click="view(a)">...</a></p>
-                                <ul class="list-inline">
-                                    <li class="list-inline-item">{{a.gender}}</li>
-                                    <li class="list-inline-item">{{a.height}}</li>
-                                </ul>
-                                <ul class="list-inline">
-                                    <li class="list-inline-item">Hair:&nbsp;<b>{{a.hair}}</b></li>
-                                    <li class="list-inline-item">Eyes:&nbsp;<b>{{a.eyes}}</b></li>
-                                </ul>
-                                <span data-ng-repeat="t in a.traits">
+			</div>
+			<br/><br/>
+			<div class="col-md-12 row">
+				<span class="badge badge-info"><span class="align-middle">Actors Shown {{viewable.length}}</span></span>
+			</div>
+			<!--For Male Select -->
+			<div data-ng-repeat="a in actors | orderBy:myOrderBy | filter:search as viewable">
+				<div class="col-sm-4 col-12 col-lg-4 row cards">
+					<div class="card" style="width: 20rem;">
+						<div class="card-block">
+							<img class="card-img-top" ng-src="{{a.img}}"></img>
+							<div class="card-body">
+								<h5 class="card-title">{{a.name}}</h5>
+								<p ng-controller="limit" class="card-text" ng-model="letterLimit">{{a.description | limitTo:letterLimit}} <a href="" ng-click="view(a)">...</a></p>
+								<ul class="list-inline">
+									<li class="list-inline-item">{{a.gender}}</li>
+									<li class="list-inline-item">{{a.height}}</li>
+								</ul>
+								<ul class="list-inline">
+									<li class="list-inline-item">Hair:&nbsp;<b>{{a.hair}}</b></li>
+									<li class="list-inline-item">Eyes:&nbsp;<b>{{a.eyes}}</b></li>
+								</ul>
+								<span data-ng-repeat="t in a.traits">
                                         <div class="badge badge-secondary">{{t}}</div>
                                 </span>
-                            </div>
-                            <div class="card-link card-footer">
-                                <button type="button" class="btn btn-link btn-lg">
+							</div>
+							<div class="card-link card-footer">
+								<button type="button" class="btn btn-link btn-lg">
                                     	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                 	</button>
-                                <button type="button" class="btn btn-link btn-lg" ng-click="view(a)">
+								<button type="button" class="btn btn-link btn-lg" ng-click="view(a)">
                                     	<i class="fa fa-eye" aria-hidden="true"></i>
                                 </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Cards End -->
-    </div>
-    <!-- / Content container. -->
-
-    <div th:replace="footer-items :: copy"></div>
-
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Cards End -->
+	</div>
+	<!-- / Content container. -->
+	<div th:replace="footer-items :: copy"></div>
 </body>
 
 </html>

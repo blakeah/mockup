@@ -1,18 +1,21 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="header-items :: copy"></head>
-<body>
-<!-- Navbar -->
-<div th:replace="navbar :: copy"></div>
-    <!--  Content container -->
-    <div class="jumbotron" id="continer-margin">
-        <div class="container">
-            <h1 class="display-4">About Page</h1>
-            <p class="lead" th:text="#{page.two.message}"></p>
-        </div>
-    </div>
-    <!-- / Content container. -->
 
-    <div th:replace="footer-items :: copy"></div>
+<head th:replace="header-items :: copy"></head>
+
+<body>
+	<!-- Navbar -->
+	<div th:replace="navbar :: copy"></div>
+	<!--  Content container -->
+	<div class="jumbotron" id="continer-margin">
+		<div class="container">
+			<h1 class="display-4">About Page</h1>
+			<p class="lead" th:text="#{page.two.message}"></p>
+		</div>
+	</div>
+	<!-- / Content container. -->
+
+	<div th:replace="footer-items :: copy"></div>
 
 </body>
+
 </html>

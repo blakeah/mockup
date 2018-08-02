@@ -4,70 +4,70 @@
 <head th:replace="header-items :: copy"></head>
 
 <body>
-    <!-- Navbar -->
-    <div th:replace="navbar :: copy"></div>
-    <!--  Content container -->
-    <div class="jumbotron background text-light" id="continer-margin">
-        <div class="container">
-            <h1 class="display-3">State of the art medical advancement!</h1>
-            <p class="lead" th:text="#{home.intro}"></p>
-            <div id="app">
-                {{message1}}
-                <a v-bind:href="url">This link is using a v-bind:href</a>
-            </div>
-        </div>
-        <!-- <div class="container">
+	<!-- Navbar -->
+	<div th:replace="navbar :: copy"></div>
+	<!--  Content container -->
+	<div class="jumbotron background text-light" id="continer-margin">
+		<div class="container">
+			<h1 class="display-3">State of the art medical advancement!</h1>
+			<p class="lead" th:text="#{home.intro}"></p>
+			<div id="app">
+				{{message1}}
+				<a v-bind:href="url">This link is using a v-bind:href</a>
+			</div>
+		</div>
+		<!-- <div class="container">
             <h1 class="display-5">Welcome to this webapp!</h1>
             <p class="lead" th:text="#{welcome.message}"></p>
         </div> -->
-    </div>
-    <section>
-    <div class="jumbotron text-center background4">
-        <div class="row">
-        <div class="col-md-5 p-lg-5 my-5">
-            <h1 class="display-4 font-weight-normal text-light">Meet the Mark VI</h1>
-            <p class="lead font-weight-normal text-light">The HEV Suit is related to both the Powered Combat Vest (PCV) used by the Hazardous Environment Combat Unit (HECU), and the armored vest and helmet used by the Black Mesa Security Force.</p>
-            <a class="btn btn-outline-secondary text-light" href="#">Look Here!</a>
-        </div>
-        <div class="col-md-5 p-lg-5 my-5">
-        <div class="animation-element slide-right testimonial">
-        </div>
-    </div>
-    </div>
-    </div>
-    </section>
-    <section >
-    <div class="flex-md-equal w-50 my-md-3 pl-md-3 float-left" >
-        <h1 class="display-4" th:text="#{headline.title.1}"></h1>
-        <p th:text="#{headline.message.1}"></p>
-    </div>
-    <div class="flex-md-equal w-50 my-md-3 pl-md-3 float-left" >
-        <h1 class="display-4" th:text="#{headline.title.2}"></h1>
-        <p th:text="#{headline.message.2}"></p>
-    </div>
-    </section>
-    <section>
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden float-left background2">
-            <div class="my-3 p-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-            </div>
-            <!-- <div class="bg-dark box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> -->
-        </div>
-        <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden float-right background3">
-            <div class="my-3 py-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-            </div>
-            <!-- <div class="bg-light box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> -->
-        </div>
-    </div>
-    </section>
+	</div>
+	<section>
+		<div class="jumbotron text-center background4">
+			<div class="row">
+				<div class="col-md-5 p-lg-5 my-5">
+					<h1 class="display-4 font-weight-normal text-light">Meet the Mark VI</h1>
+					<p class="lead font-weight-normal text-light">The HEV Suit is related to both the Powered Combat Vest (PCV) used by the Hazardous Environment Combat Unit (HECU), and the armored vest and helmet used by the Black Mesa Security Force.</p>
+					<a class="btn btn-outline-secondary text-light" href="#">Look Here!</a>
+				</div>
+				<div class="col-md-5 p-lg-5 my-5">
+					<div class="animation-element slide-right testimonial">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="flex-md-equal w-50 my-md-3 pl-md-3 float-left">
+			<h1 class="display-4" th:text="#{headline.title.1}"></h1>
+			<p th:text="#{headline.message.1}"></p>
+		</div>
+		<div class="flex-md-equal w-50 my-md-3 pl-md-3 float-left">
+			<h1 class="display-4" th:text="#{headline.title.2}"></h1>
+			<p th:text="#{headline.message.2}"></p>
+		</div>
+	</section>
+	<section>
+		<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+			<div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden float-left background2">
+				<div class="my-3 p-3">
+					<h2 class="display-5">Another headline</h2>
+					<p class="lead">And an even wittier subheading.</p>
+				</div>
+				<!-- <div class="bg-dark box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> -->
+			</div>
+			<div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden float-right background3">
+				<div class="my-3 py-3">
+					<h2 class="display-5">Another headline</h2>
+					<p class="lead">And an even wittier subheading.</p>
+				</div>
+				<!-- <div class="bg-light box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> -->
+			</div>
+		</div>
+	</section>
 
-    <!-- / Content container. -->
-    <div th:replace="footer :: copy"></div>
-    <div th:replace="footer-items :: copy"></div>
+	<!-- / Content container. -->
+	<div th:replace="footer :: copy"></div>
+	<div th:replace="footer-items :: copy"></div>
 
 </body>
 

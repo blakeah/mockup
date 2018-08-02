@@ -1,6 +1,6 @@
 var input = new Vue({
-    el: '#input',
-    data: {
-        name: 'Blake'
-    }
+	el: '#input',
+	data: {
+		name: 'Blake'
+	}
 });
