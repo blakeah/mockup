@@ -21,8 +21,8 @@
         <div ng-controller='actorsController'>
             <script th:replace="actors/actorView  :: copy"></script>
             <div>
-                <div data-ng-repeat="v in actors">
-                <p>The name is {{v.name}}</p></div>
+                <div data-ng-repeat="actor in actors">
+                <p>The name is {{actor.name}}</p></div>
                 <p>The ID is {{greeting.id}}</p>
                 <p>The content is {{greeting.content}}</p>
             </div>

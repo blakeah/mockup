@@ -3,7 +3,6 @@
      "gender" : "Male",
      "description" : "Text",
      "height" : "5 11",
-     "img" : "../images/profile-male.jpg",
      "hair" : "Brown",
      "eyes" : "Hazel"
 	},
@@ -12,8 +11,7 @@
 	     "gender" : "Male",
 	     "description" : "Text",
 	     "height" : "5 11",
-	     "img" : "../images/profile-male.jpg",
 	     "hair" : "Brown",
 	     "eyes" : "Hazel"
-	},
+	}
 ]
