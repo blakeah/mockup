@@ -110,6 +110,7 @@ function actorsController($scope, $http, $uibModal) {
     $http.get("https://raw.githubusercontent.com/blakeah/mockup/master/src/main/resources/data.json").
         then(function(response) {
             $scope.actors = response.data;
+			$scope.traits = response.data;
     });
 
     // $http.get(encodeURI("http://localhost:8080/dev/api/actors")).

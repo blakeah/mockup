@@ -1,21 +1,67 @@
-[
-	{
-	 "id" : 100001,
-	 "name" : "Nathan Hunt",
-     "gender" : "Male",
-     "description" : "Theres more than meets the eye in the case of Nathan Hunt, but two things youll never forget are that hes energetic and protective. Of course hes also clever, cooperative and active, but those are often overshadowed by tendencies of being crude as well.",
-     "height" : "5 11",
-	 "img" : "../images/profile-male.jpg",
-     "hair" : "Brown",
-     "eyes" : "Hazel",
-	 "traits" : ["Athletic", "Slim Build", "Serious" , "Action"]
+[{
+		"id": 100001,
+		"name": "Nathan Hunt",
+		"gender": "Male",
+		"description": "Theres more than meets the eye in the case of Nathan Hunt, but two things youll never forget are that hes energetic and protective. Of course hes also clever, cooperative and active, but those are often overshadowed by tendencies of being crude as well.",
+		"height": "5ft 11",
+		"img": "../images/profile-male.jpg",
+		"hair": "Brown",
+		"eyes": "Hazel",
+		"traits": ["Athletic", "Slim Build", "Serious", "Action"]
 	},
 	{
-		 "name" : "Nathan two",
-	     "gender" : "Male",
-	     "description" : "Text",
-	     "height" : "5 11",
-	     "hair" : "Brown",
-	     "eyes" : "Hazel"
+		"id": 100002,
+		"name": "Madison Doyle",
+		"gender": "Female",
+		"description": "A lot can be said of Madison Doyle, but the biggest two things to know are that shes romantic and exciting. Of course shes also active, focused and charismatic, but theyre tainted by and mixed with habits of being lazy as well.  Her romantic nature though, this is what shes so well-liked for. People regularly count on this and her focus when theyre feeling down.",
+		"height": "4ft 11",
+		"img": "../images/profile-female.jpg",
+		"hair": "Brown",
+		"eyes": "Hazel",
+		"traits": ["Composed", "Calming", "Soft Spoken"]
+	},
+	{
+		"id": 100003,
+		"name": "Owen Lane",
+		"gender": "Male",
+		"description": "Few know the true Owen Lane, but the two traits most people enjoy the most are that hes individualistic and organized. Of course hes also reflective, forgiving and witty, but these are in a way balance by being egocentric as well.  His individualism though, this is what hes often admired for. Friends tend to count on this and his intuition whenever they need cheering up.",
+		"height": "6ft 1",
+		"img": "../images/profile-male.jpg",
+		"hair": "Blonde",
+		"eyes": "Blue",
+		"traits": ["Shy", "Nerdy", "Funny"]
+	},
+	{
+		"id": 100004,
+		"name": "Ava Evans",
+		"gender": "Female",
+		"description": "Many things can be said of Ava Evans, but at the very least youll find out shes spontaneous and playful. Of course shes also contemplative, good-natured and enthusiastic, but in a way theyre lesser traits and tained by behaviors of being venomous as well.",
+		"height": "5ft 5",
+		"img": "../images/profile-female.jpg",
+		"hair": "Black",
+		"eyes": "Green",
+		"traits": ["Comedic", "Side-Kick"]
+	},
+	{
+		"id": 100005,
+		"name": "Frankie Burke",
+		"gender": "Male",
+		"description": "Theres more than meets the eye in the case of Frankie Burke, but at the very least youll find out hes dutiful and contemplative. Of course hes also lovable, gracious and honest, but in smaller doses and theyre often spoiled by habits of being agonizing as well. His dutiful nature though, this is what hes kind of cherished for. There are many times when friends count on this and his insight when theyre in need of support.",
+		"height": "6ft 2",
+		"img": "../images/profile-male.jpg",
+		"hair": "Bald",
+		"eyes": "Brown",
+		"traits": ["Serious", "Bulky", "Intimidating", "Action"]
+	},
+	{
+		"id": 100006,
+		"name": "Suzie Rogers",
+		"gender": "Female",
+		"description": "Looks can be deceiving when it comes Kayla Rogers, but if theres anything you should know its that shes open and leaderly. Of course shes also reflective, incorruptible and intuitive, but in a way theyre lesser traits and tained by behaviors of being hostile as well.  Her openness though, this is what shes so well-liked for. There are many times when friends count on this and her energy whenever they need cheering up.",
+		"height": "5ft 9",
+		"img": "../images/profile-female.jpg",
+		"hair": "White",
+		"eyes": "Blue",
+		"traits": ["Snarky", "Witty", "Comedic", "Elderly"]
 	}
 ]
