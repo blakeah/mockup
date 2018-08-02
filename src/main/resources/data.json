@@ -4,11 +4,10 @@
 	 "name" : "Nathan Hunt",
      "gender" : "Male",
      "description" : "Theres more than meets the eye in the case of Nathan Hunt, but two things youll never forget are that hes energetic and protective. Of course hes also clever, cooperative and active, but those are often overshadowed by tendencies of being crude as well.",
-     "height" : "5 11\"",
+     "height" : "5 11",
 	 "img" : "../images/profile-male.jpg",
      "hair" : "Brown",
      "eyes" : "Hazel"
-
 	},
 	{
 		 "name" : "Nathan two",
