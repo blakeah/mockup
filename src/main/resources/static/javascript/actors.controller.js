@@ -3,9 +3,11 @@ var faveApp = angular.module('faveApp', ['ui.bootstrap', 'limitTo']);
 
 function actorsController($scope, $http, $uibModal) {
 
-	// $http.get("http://localhost:8080/dev/api/actors").
+    // Getting Local JSON Data
+    // $http.get("http://localhost:8080/dev/api/actors").
 	//     then(function(response) {
 	//         $scope.actors = response.data;
+    //         $scope.traits = response.data;
 	// });
 
 	// Getting External JSON Data
