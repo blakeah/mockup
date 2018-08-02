@@ -107,7 +107,7 @@ function actorsController($scope, $http, $uibModal) {
     //         $scope.actors = response.data;
     // });
 
-    $http.get("https://raw.githubusercontent.com/blakeah/mockup/master/src/main/resources/actor-data.json").
+    $http.get("https://raw.githubusercontent.com/blakeah/mockup/master/src/main/resources/data.json").
         then(function(response) {
             $scope.actors = response.data;
     });

@@ -1,10 +1,8 @@
-[   {
-        "name" : "Nathan Hunt",
+{       "name" : "Nathan Hunt",
         "gender" : "Male",
         "description" : "Text",
         "height" : "5 11",
         "img" : "../images/profile-male.jpg",
         "hair" : "Brown",
         "eyes" : "Hazel"
-    },
-]
+}
