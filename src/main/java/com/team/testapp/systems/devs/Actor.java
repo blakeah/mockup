@@ -1,10 +1,10 @@
-package edu.hawaii.its.tenure.type;
+package com.team.testapp.systems.devs;
 
 import java.util.List;
 
 public class Actor {
 
-    String id;
+    Integer id;
     String name;
     String gender;
     String description;
@@ -14,11 +14,11 @@ public class Actor {
     String eyes;
     List<String> traits;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

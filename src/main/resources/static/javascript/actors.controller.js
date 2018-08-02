@@ -4,19 +4,19 @@ var faveApp = angular.module('faveApp', ['ui.bootstrap', 'limitTo']);
 function actorsController($scope, $http, $uibModal) {
 
     // Getting Local JSON Data
-    // $http.get("http://localhost:8080/dev/api/actors").
-	//     then(function(response) {
-	//         $scope.actors = response.data;
-    //         $scope.traits = response.data;
-	// });
+    $http.get("http://localhost:8080/dev/api/actors").
+	    then(function(response) {
+	        $scope.actors = response.data;
+            // $scope.traits = response.data;
+	});
 
 	// Getting External JSON Data
 
-	$http.get("https://raw.githubusercontent.com/blakeah/mockup/master/src/main/resources/data.json").
-	then(function(response) {
-		$scope.actors = response.data;
-		$scope.traits = response.data;
-	});
+	// $http.get("https://raw.githubusercontent.com/blakeah/mockup/master/src/main/resources/data.json").
+	// then(function(response) {
+	// 	$scope.actors = response.data;
+	// 	$scope.traits = response.data;
+	// });
 
 	// Order actors function
 
@@ -37,6 +37,7 @@ function actorsController($scope, $http, $uibModal) {
 		$scope.close = function() {
 			modalInstance.close();
 		};
+
 	};
 }
 faveApp.controller("actorsController", actorsController);

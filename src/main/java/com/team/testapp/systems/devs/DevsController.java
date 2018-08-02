@@ -14,12 +14,6 @@ public class DevsController {
     public String home() {
         return "home";
     }
-
-    // @GetMapping("/about")
-    // public String about (){
-    //     return "about";
-    // };
-
     @GetMapping("/help/contact")
     public String contact (){
         System.out.println ("contact-page");
@@ -30,11 +24,6 @@ public class DevsController {
         System.out.println ("actors");
         return "actors/actors";
     }
-    // @GetMapping("/actors/actorView")
-    // public String actorView (){
-    //     System.out.println ("actorView");
-    //     return "actors/actorView";
-    // }
     @GetMapping(value = {"/{page}"})
     public String page (@PathVariable String page){
         System.out.println ("page: " + page);
