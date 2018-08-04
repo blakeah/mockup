@@ -1,15 +1,17 @@
 // Element locators
-var actorApp = angular.module('actorApp', ['ui.bootstrap', 'limitTo']);
+var actorApp = angular.module('actorApp', ['ui.bootstrap' ]);
 
 function actorsController($scope, $http, $uibModal) {
 
+    $scope.init = function() {
     // Getting Local JSON Data
-    $http.get("http://localhost:8080/dev/api/actors").
-    then(function(response) {
-        $scope.actors = response.data;
-        // $scope.traits = response.data;
-    });
 
+        $http.get("http://localhost:8080/dev/api/actors").
+            then(function(response) {
+                $scope.actors = response.data;
+        // $scope.traits = response.data;
+        });
+    }
     // Getting External JSON Data
 
     // $http.get("https://raw.githubusercontent.com/blakeah/mockup/master/src/main/resources/data.json").
@@ -22,7 +24,11 @@ function actorsController($scope, $http, $uibModal) {
 
     $scope.orderByMe = function(m) {
         $scope.myOrderBy = m;
+
+
+
     };
+
 
     // Target Individual Actor to Display in Modal
 
@@ -34,10 +40,31 @@ function actorsController($scope, $http, $uibModal) {
             scope: $scope,
             size: 'lg',
         });
+
+        // modalInstance.result.then(function(data) {
+        //
+        //     console.log("saving dialogue" , data);
+        //
+        //     $scope.a.name = "stupid Name";
+        //
+        //
+        //     $http.post("http://localhost:8080/dev/api/saveactor" , $scope.a).success(function(data) {
+        //         console.log('success', data);
+        //     }).error(function(data, status, headers, config) {
+        //         console.log('error', data);
+        //     });
+        //
+        //     },
+        // function() {
+        //     console.log('saved dialogue' + new Date() + data);
+        // });
+
         $scope.close = function() {
             modalInstance.close();
         };
 
-    };
+    }
+
+
 }
 actorApp.controller("actorsController", actorsController);

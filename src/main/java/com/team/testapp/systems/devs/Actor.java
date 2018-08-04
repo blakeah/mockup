@@ -1,7 +1,16 @@
 package com.team.testapp.systems.devs;
 
 import java.util.List;
+import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name = "actor")
 public class Actor {
 
     Integer id;
@@ -12,8 +21,13 @@ public class Actor {
     String img;
     String hair;
     String eyes;
+    @Transient
     List<String> traits;
 
+    public Actor(){}
+
+    @Id
+    @Column(name = "id")
     public Integer getId() {
         return id;
     }
@@ -22,6 +36,7 @@ public class Actor {
         this.id = id;
     }
 
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -30,6 +45,7 @@ public class Actor {
         this.name = name;
     }
 
+    @Column(name = "gender")
     public String getGender() {
         return gender;
     }
@@ -77,11 +93,11 @@ public class Actor {
     public void setEyes(String eyes) {
         this.eyes = eyes;
     }
-
+@Transient
     public List<String> getTraits() {
         return traits;
     }
-
+@Transient
     public void setTraits(List<String> traits) {
         this.traits = traits;
     }
