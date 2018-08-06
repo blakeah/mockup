@@ -42,22 +42,22 @@ public class ActorRestController {
         return new ResponseEntity<>(actors, HttpStatus.OK);
     }
 
-    @GetMapping("/api/actory")
-    public ResponseEntity<List<Actor>> apiActorsy() {
-        return new ResponseEntity<>(actorRepository.findAll(), HttpStatus.OK);
-    }
+    // @GetMapping("/api/actory")
+    // public ResponseEntity<List<Actor>> apiActorsy() {
+    //     return new ResponseEntity<>(actorRepository.findAll(), HttpStatus.OK);
+    // }
 
-    @PostMapping("/api/saveactor")
-    public ResponseEntity<Actor> saveActor(@RequestBody Actor actor) {
-        Actor a = actorRepository.findById(actor.getId());
-        System.out.println("a = " + a);
-        System.out.println("actor = " + actor);
-        a.setName(actor.getName());
-        a.setEyes(actor.getEyes());
-
-        actorRepository.save(a);
-        
-        return new ResponseEntity<>(a, HttpStatus.OK);
-    }
+    // @PostMapping("/api/saveactor")
+    // public ResponseEntity<Actor> saveActor(@RequestBody Actor actor) {
+    //     Actor a = actorRepository.findById(actor.getId());
+    //     System.out.println("a = " + a);
+    //     System.out.println("actor = " + actor);
+    //     a.setName(actor.getName());
+    //     a.setEyes(actor.getEyes());
+    //
+    //     actorRepository.save(a);
+    //
+    //     return new ResponseEntity<>(a, HttpStatus.OK);
+    // }
 
 }

@@ -14,7 +14,8 @@
     </div>
     <div class="container">
         <div ng-controller='actorsController' ng-init="init()">
-            <script th:replace="actors/actorView  :: copy"></script>
+            <script th:replace="actors/actorview  :: copy"></script>
+            <script th:replace="actors/actorform  :: copy"></script>
             <div class='card-block'>
                 <h3 class='tab-headings'>Actors Database</h3>
             </div>
@@ -25,16 +26,20 @@
                     <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
                 </div>
                 </input>
+
             </div>
             <div class="btn row">
                 <label>
-                    <button class="btn btn-sm btn-primary" ng-click="orderByMe('name')">Order By Name</button>
+                    <button class="btn btn-sm btn-primary" ng-click="newActor()">Add New Actor</button>
                 </label>
                 <label>
-                    <button class="btn btn-sm btn-primary" ng-click="orderByMe('gender')">Sort Female</button>
+                    <button class="btn btn-sm btn-secondary" ng-click="orderByMe('name')">Order By Name</button>
                 </label>
                 <label>
-                    <button class="btn btn-sm btn-primary" ng-click="orderByMe('-gender')">Sort Male</button>
+                    <button class="btn btn-sm btn-secondary" ng-click="orderByMe('gender')">Sort Female</button>
+                </label>
+                <label>
+                    <button class="btn btn-sm btn-secondary" ng-click="orderByMe('-gender')">Sort Male</button>
                 </label>
             </div>
             <div class="col-md-12 row">

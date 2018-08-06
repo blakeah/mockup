@@ -1,0 +1,25 @@
+<script type="text/ng-template" id="actorform" th:fragment="copy">
+    <div ng-controller="newActor">
+        <!-- Modal Header -->
+        <div class="card flex-row flex-wrap">
+            <div class="card-block px-3 py-3 w-100">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()"><span aria-hidden="true">&times;</span></button>
+                <h4 class="card-title">New Actor</h4>
+                <p class="card-text px-3 w-100">
+                    <form name="createActor" novalidate="novalidate">
+                            <div class="form-group" ng-repeat="p in profile">
+                                    <label class="row">Name</label><input ng-model="p.name" ng-required="false"></input>
+                                    <label class="row">Gender</label><input ng-model="p.gender" ng-required="false"></input>
+                            </div>
+                        <button ng-disabled="userFormOne.$invalid" ng-click="sendMe()">sendMe</button>
+                    </form>
+                </p>
+            </div>
+            <div class="card-footer w-100 text-muted">
+                <!-- <p>Optional Text</p> -->
+                <button type="button" class="btn btn-danger" ng-click="close()">Close</button>
+                <button type="button" class="btn btn-info pull-right" >Add Actor</button>
+            </div>
+        </div>
+    </div>
+</script>
