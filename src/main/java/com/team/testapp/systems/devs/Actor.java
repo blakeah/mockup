@@ -1,7 +1,6 @@
 package com.team.testapp.systems.devs;
 
 import java.util.List;
-import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,7 +23,8 @@ public class Actor {
     @Transient
     List<String> traits;
 
-    public Actor(){}
+    public Actor() {
+    }
 
     @Id
     @Column(name = "id")
@@ -93,11 +93,13 @@ public class Actor {
     public void setEyes(String eyes) {
         this.eyes = eyes;
     }
-@Transient
+
+    @Transient
     public List<String> getTraits() {
         return traits;
     }
-@Transient
+
+    @Transient
     public void setTraits(List<String> traits) {
         this.traits = traits;
     }
