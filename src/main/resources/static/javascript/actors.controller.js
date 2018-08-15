@@ -32,9 +32,9 @@ function actorsController($scope, $http, $uibModal) {
             scope: $scope,
             size: 'lg',
     });
-    $scope.close = function() {
-        modalInstance.close();
-    };
+        $scope.close = function() {
+            modalInstance.close();
+        };
     }
 
     $scope.editActor = function(a) {
@@ -48,6 +48,28 @@ function actorsController($scope, $http, $uibModal) {
     $scope.close = function() {
         modalInstance.close();
     };
+
+    modalInstance.result.then(function(data) {
+
+        // console.log("saving dialogue" , data);
+
+        $scope.a.name = "New Name";
+
+        $http.post("http://localhost:8080/dev/api/saveactor" , $scope.a)
+            .success(function(data) {
+                    console.log('success', data);
+                    })
+            .error(function(data, status, headers, config) {
+                    console.log('error', data);
+                    });
+    },
+        function() {
+            console.log('saved dialogue' + new Date() + data);
+        });
+        $scope.save = function() {
+            modalInstance.close();
+        };
+
     }
 
     // Target Individual Actor to Display in Modal
@@ -59,33 +81,10 @@ function actorsController($scope, $http, $uibModal) {
             scope: $scope,
             size: 'lg',
     });
-
-    $scope.close = function() {
-        modalInstance.close();
-    };
-
-
-    // modalInstance.result.then(function(data) {
-    //
-    //     console.log("saving dialogue" , data);
-    //
-    //     $scope.a.name = "Changing Name";
-    //
-    //     $http.post("http://localhost:8080/dev/api/saveactor" , $scope.a).success(function(data) {
-    //         console.log('success', data);
-    //             }).error(function(data, status, headers, config) {
-    //                 console.log('error', data);
-    //         });
-    //     },
-    //     function() {
-    //         console.log('saved dialogue' + new Date() + data);
-    //     });
-    //     $scope.close = function() {
-    //         modalInstance.close();
-    //     };
-
+        $scope.close = function() {
+            modalInstance.close();
+        };
     }
-
 
 }
 actorApp.controller("actorsController", actorsController);

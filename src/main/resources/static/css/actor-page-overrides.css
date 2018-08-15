@@ -57,7 +57,7 @@
     overflow: hidden;
     width: 150px;
     height: 150px;
-    border: 8px solid rgba(000, 000, 000, 0.2);
+    border: 8px solid rgba(000, 000, 000, 0.15);
     position: absolute;
     top: 30px;
     left: 0px;
@@ -68,8 +68,8 @@ img {
 }
 .p-image {
   position: absolute;
-  top: 160px;
-  right: 20px;
+  top: 45px;
+  right: 45px;
   color: #666666;
   transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
 }

@@ -6,5 +6,5 @@ CREATE TABLE actor (
   ,height      VARCHAR(5) NOT NULL
   ,img         VARCHAR(255) NOT NULL
   ,hair        VARCHAR(20) NOT NULL
-  ,eyes        VARCHAR(20) NOT NULL  
+  ,eyes        VARCHAR(20) NOT NULL
 );
