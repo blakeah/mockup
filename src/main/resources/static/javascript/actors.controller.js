@@ -24,29 +24,45 @@ function actorsController($scope, $http, $uibModal) {
         $scope.myOrderBy = m;
     };
 
+    // New Actor Form Modal
     $scope.newActor = function() {
         var modalInstance = $uibModal.open({
             animation: true,
-            templateUrl: 'actorform',
+            templateUrl: 'newactor',
             scope: $scope,
             size: 'lg',
     });
-        $scope.close = function() {
-            modalInstance.close();
-        };
+    $scope.close = function() {
+        modalInstance.close();
+    };
+    }
 
+    $scope.editActor = function(a) {
+        $scope.a = a;
+        var modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl: 'editactor',
+            scope: $scope,
+            size: 'lg',
+    });
+    $scope.close = function() {
+        modalInstance.close();
+    };
     }
 
     // Target Individual Actor to Display in Modal
-
     $scope.view = function(a) {
         $scope.a = a;
         var modalInstance = $uibModal.open({
             animation: true,
-            templateUrl: 'actorView',
+            templateUrl: 'actorview',
             scope: $scope,
             size: 'lg',
     });
+
+    $scope.close = function() {
+        modalInstance.close();
+    };
 
 
     // modalInstance.result.then(function(data) {
@@ -69,5 +85,7 @@ function actorsController($scope, $http, $uibModal) {
     //     };
 
     }
+
+
 }
 actorApp.controller("actorsController", actorsController);

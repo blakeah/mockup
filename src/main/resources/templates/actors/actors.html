@@ -14,8 +14,10 @@
     </div>
     <div class="container">
         <div ng-controller='actorsController' ng-init="init()">
+            <script th:replace="actors/newactor  :: copy"></script>
+            <script th:replace="actors/editactor  :: copy"></script>
             <script th:replace="actors/actorview  :: copy"></script>
-            <script th:replace="actors/actorform  :: copy"></script>
+
             <div class='card-block'>
                 <h3 class='tab-headings'>Actors Database</h3>
             </div>
@@ -72,6 +74,9 @@
                                 	</button>
                                 <button type="button" class="btn btn-link btn-lg" ng-click="view(a)">
                                     	<i class="fa fa-eye" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-link btn-lg pull-right" ng-click="editActor(a)">
+                                    	<i class="fa fa-edit" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
