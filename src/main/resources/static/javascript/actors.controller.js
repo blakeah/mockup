@@ -24,6 +24,20 @@ function actorsController($scope, $http, $uibModal) {
         $scope.myOrderBy = m;
     };
 
+    // Target Individual Actor to Display in Modal
+    $scope.viewActor = function(a) {
+        $scope.a = a;
+        var modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl: 'actorview',
+            scope: $scope,
+            size: 'lg',
+    });
+        $scope.close = function() {
+            modalInstance.close();
+        };
+    }
+
     // New Actor Form Modal
     $scope.newActor = function() {
         var modalInstance = $uibModal.open({
@@ -37,6 +51,7 @@ function actorsController($scope, $http, $uibModal) {
         };
     }
 
+    // Edit Actor Form Modal
     $scope.editActor = function(a) {
         $scope.a = a;
         var modalInstance = $uibModal.open({
@@ -50,9 +65,7 @@ function actorsController($scope, $http, $uibModal) {
     };
 
     modalInstance.result.then(function(data) {
-
         // console.log("saving dialogue" , data);
-
         $scope.a.name = "New Name";
 
         $http.post("http://localhost:8080/dev/api/saveactor" , $scope.a)
@@ -72,19 +85,7 @@ function actorsController($scope, $http, $uibModal) {
 
     }
 
-    // Target Individual Actor to Display in Modal
-    $scope.view = function(a) {
-        $scope.a = a;
-        var modalInstance = $uibModal.open({
-            animation: true,
-            templateUrl: 'actorview',
-            scope: $scope,
-            size: 'lg',
-    });
-        $scope.close = function() {
-            modalInstance.close();
-        };
-    }
+
 
 }
 actorApp.controller("actorsController", actorsController);

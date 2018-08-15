@@ -1,7 +1,6 @@
-<script type="text/ng-template" id="editactor" th:fragment="copy">
-    <div ng-controller="newActor">
+<script type="text/ng-template" id="editactor" th:fragment="copy" >
         <!-- Modal Header -->
-        <div class="card flex-row flex-wrap">
+        <div class="card flex-row flex-wrap" ng-controller="editActor">
             <div class="card-block-lg px-3 py-3 w-100">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()"><span aria-hidden="true">&times;</span></button>
                 <h4 class="card-title">Edit Actor</h4>
@@ -69,5 +68,4 @@
                 <button type="button" class="btn btn-info pull-right" ng-click="save()">Save</button>
             </div>
         </div>
-    </div>
 </script>

@@ -1,7 +1,6 @@
-<script type="text/ng-template" id="newactor" th:fragment="copy">
-    <div ng-controller="newActor">
+<script type="text/ng-template" id="newactor" th:fragment="copy" >
         <!-- Modal Header -->
-        <div class="card flex-row flex-wrap">
+        <div class="card flex-row flex-wrap" ng-controller="newActor">
             <div class="card-block-lg px-3 py-3 w-100">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()"><span aria-hidden="true">&times;</span></button>
                 <h4 class="card-title">New Actor</h4>
@@ -10,9 +9,9 @@
                         <div class="col-3 w-100">
                             <div class="circle">
                                 <!-- User Profile Image -->
-                                <img class="profile-pic" ng-src="{{b.img}}"></img>
+                                <img class="profile-pic"></img>
                                 <!-- Default Image -->
-                                <!-- <i class="fa fa-user fa-5x"></i> -->
+                                    <i ng-if="icon" class="fa fa-user fa-5x"></i>
                             </div>
                             <div class="p-image" data-provides="fileinput">
                                 <i class="fa fa-camera upload-button"></i>
@@ -22,20 +21,20 @@
                         <div class="col-9 w-100 pull-right">
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">First and Last Name</label>
-                                <input type="text" placeholder="{{b.name}}" class="form-control col-6" id="recipient-name"></input>
+                                <input type="text" class="form-control col-6" id="recipient-name"></input>
                             </div>
                             <div class="form-group row">
                                 <div class="col-3">
                                     <label for="actor-height" class="col-form-label">Height</label>
-                                    <input type="text" placeholder="{{b.height}}" class="form-control col-12" id="actor-height"></input>
+                                    <input type="text"  class="form-control col-12" id="actor-height"></input>
                                 </div>
                                 <div class="col-3">
                                     <label for="actor-hair" class="col-form-label">Hair Color</label>
-                                    <input type="text" placeholder="{{b.hair}}" class="form-control col-12" id="actor-hair"></input>
+                                    <input type="text"  class="form-control col-12" id="actor-hair"></input>
                                 </div>
                                 <div class="col-3">
                                     <label for="actor-eyes" class="col-form-label">Eye Color</label>
-                                    <input type="text" placeholder="{{b.eyes}}" class="form-control col-12" id="actor-eyes"></input>
+                                    <input type="text"  class="form-control col-12" id="actor-eyes"></input>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -69,5 +68,4 @@
                 <button type="button" class="btn btn-info pull-right">Add Actor</button>
             </div>
         </div>
-    </div>
 </script>

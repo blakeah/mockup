@@ -55,7 +55,7 @@
                             <img class="card-img-top" ng-src="{{a.img}}"></img>
                             <div class="card-body extend">
                                 <h5 class="card-title">{{a.name}}</h5>
-                                <p class="card-text">{{a.description | limitTo:140}} <a href="" ng-click="view(a)">...</a></p>
+                                <p class="card-text">{{a.description | limitTo:140}} <a href="" ng-click="viewActor(a)">...</a></p>
                                 <ul class="list-inline">
                                     <li class="list-inline-item">{{a.gender}}</li>
                                     <li class="list-inline-item">{{a.height}}</li>
@@ -72,7 +72,7 @@
                                 <button type="button" class="btn btn-link btn-lg">
                                     	<i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                 	</button>
-                                <button type="button" class="btn btn-link btn-lg" ng-click="view(a)">
+                                <button type="button" class="btn btn-link btn-lg" ng-click="viewActor(a)">
                                     	<i class="fa fa-eye" aria-hidden="true"></i>
                                 </button>
                                 <button type="button" class="btn btn-link btn-lg pull-right" ng-click="editActor(a)">
