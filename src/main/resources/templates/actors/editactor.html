@@ -42,21 +42,9 @@
                                 <textarea class="form-control" placeholder="{{a.description}}" id="description"></textarea>
                             </div>
                             <div class="form-group row">
-                                <div class="col-3">
-                                    <label for="trait1" class="col-form-label">Trait 1</label>
-                                    <input type="text" class="form-control col-md-12" id="trait1"></input>
-                                </div>
-                                <div class="col-3">
-                                    <label for="trait2" class="col-form-label">Trait 2</label>
-                                    <input type="text" class="form-control col-md-12" id="trait2"></input>
-                                </div>
-                                <div class="col-3">
-                                    <label for="trait3" class="col-form-label">Trait 3</label>
-                                    <input type="text" class="form-control col-md-12" id="trait3"></input>
-                                </div>
-                                <div class="col-3">
-                                    <label for="trait4" class="col-form-label">Trait 4</label>
-                                    <input type="text" class="form-control col-md-12" id="trait4"></input>
+                                <div class="col-12">
+                                    <label for="trait1" class="col-form-label">Traits</label>
+                                    <input type="text" class="form-control col-md-12" placeholder="{{arrayToString(a.traits)}}" id="trait1"></input>
                                 </div>
                             </div>
                         </div>

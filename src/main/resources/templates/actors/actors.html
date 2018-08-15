@@ -48,7 +48,7 @@
                 <span class="badge badge-info"><span class="align-middle">Actors Shown {{viewable.length}}</span></span>
             </div>
             <!--For Male Select -->
-            <div class="row card-group">
+            <div class="row card-group" ng-cloak="ng-cloak">
                 <div data-ng-repeat="a in actors | orderBy:myOrderBy | filter:search as viewable" class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
                     <div class="card margin-top">
                         <div class="card-block">

@@ -66,6 +66,7 @@ function actorsController($scope, $http, $uibModal) {
 
     modalInstance.result.then(function(data) {
         // console.log("saving dialogue" , data);
+
         $scope.a.name = "New Name";
 
         $http.post("http://localhost:8080/dev/api/saveactor" , $scope.a)
@@ -75,10 +76,7 @@ function actorsController($scope, $http, $uibModal) {
             .error(function(data, status, headers, config) {
                     console.log('error', data);
                     });
-    },
-        function() {
-            console.log('saved dialogue' + new Date() + data);
-        });
+    });
         $scope.save = function() {
             modalInstance.close();
         };
