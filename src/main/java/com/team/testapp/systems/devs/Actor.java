@@ -25,9 +25,16 @@ import javax.persistence.Transient;
 @Table(name = "actor")
 public class Actor {
 
+    @Id
+    @Column(name = "id")
     Integer id;
+
+    @Column(name = "name")
     String name;
+
+    @Column(name = "gender")
     String gender;
+
     String description;
     String height;
     String img;
@@ -39,20 +46,19 @@ public class Actor {
     @Transient
     List<String> languages;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "actor_trait",
+            joinColumns = @JoinColumn(name = "actor_id", unique = false),
+            inverseJoinColumns = @JoinColumn(name = "trait_id", unique = false))
+    @OrderBy(value = "description")
+    List<Trait> traits = new ArrayList<>(0);
+
     // Constructor.
     public Actor() {
         // Empty.
     }
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "actor_trait",
-            joinColumns = @JoinColumn(name = "actor_id", unique = false),
-            inverseJoinColumns = @JoinColumn(name = "trait_id", unique = false))
-    @OrderBy(value = "id")
-    private List<Trait> traits = new ArrayList<>(0);
 
-    @Id
-    @Column(name = "id")
     public Integer getId() {
         return id;
     }
@@ -61,7 +67,7 @@ public class Actor {
         this.id = id;
     }
 
-    @Column(name = "name")
+
     public String getName() {
         return name;
     }
@@ -70,7 +76,7 @@ public class Actor {
         this.name = name;
     }
 
-    @Column(name = "gender")
+
     public String getGender() {
         return gender;
     }
@@ -127,13 +133,14 @@ public class Actor {
         this.eyes = eyes;
     }
 
-    // public List<Trait> getTraits() {
-    //     return traits;
-    // }
-    //
-    // public void setTraits(List<Trait> traits) {
-    //     this.traits = traits;
-    // }
+
+    public List<Trait> getTraits() {
+        return traits;
+    }
+
+    public void setTraits(List<Trait> traits) {
+        this.traits = traits;
+    }
 
     @Transient
     public List<String> getRoles() {

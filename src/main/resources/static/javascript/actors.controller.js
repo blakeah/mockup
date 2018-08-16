@@ -10,6 +10,7 @@ function actorsController($scope, $http, $uibModal) {
             then(function(response) {
                 $scope.actors = response.data;
         });
+
     }
     // Getting External JSON Data
 

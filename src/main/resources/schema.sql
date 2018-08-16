@@ -13,12 +13,12 @@ CREATE TABLE actor (
 
 CREATE TABLE trait (
     id      INTEGER NOT NULL PRIMARY KEY,
-    description    VARCHAR(100) NOT NULL
+    description     VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE actor_trait (
-    actor_id INT NOT NULL,
-    trait_id INT NOT NULL,
+    actor_id INTEGER NOT NULL,
+    trait_id INTEGER NOT NULL,
     primary key(actor_id, trait_id),
     index type_idx(trait_id),
     FOREIGN KEY (actor_id) REFERENCES actor(id) ON DELETE CASCADE,
