@@ -1,10 +1,23 @@
 package com.team.testapp.systems.devs;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -20,11 +33,23 @@ public class Actor {
     String img;
     String hair;
     String eyes;
+    String resume;
     @Transient
-    List<String> traits;
+    List<String> roles;
+    @Transient
+    List<String> languages;
 
+    // Constructor.
     public Actor() {
+        // Empty.
     }
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "actor_trait",
+            joinColumns = @JoinColumn(name = "actor_id", unique = false),
+            inverseJoinColumns = @JoinColumn(name = "trait_id", unique = false))
+    @OrderBy(value = "id")
+    private List<Trait> traits = new ArrayList<>(0);
 
     @Id
     @Column(name = "id")
@@ -78,6 +103,14 @@ public class Actor {
         this.img = img;
     }
 
+    public String getResume() {
+        return resume;
+    }
+
+    public void setResume(String resume) {
+        this.resume = resume;
+    }
+
     public String getHair() {
         return hair;
     }
@@ -94,14 +127,32 @@ public class Actor {
         this.eyes = eyes;
     }
 
+    // public List<Trait> getTraits() {
+    //     return traits;
+    // }
+    //
+    // public void setTraits(List<Trait> traits) {
+    //     this.traits = traits;
+    // }
+
     @Transient
-    public List<String> getTraits() {
-        return traits;
+    public List<String> getRoles() {
+        return roles;
     }
 
     @Transient
-    public void setTraits(List<String> traits) {
-        this.traits = traits;
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
+
+    @Transient
+    public List<String> getLanguages() {
+        return languages;
+    }
+
+    @Transient
+    public void setLanguages(List<String> languages) {
+        this.languages = languages;
     }
 
     @Override
@@ -114,7 +165,10 @@ public class Actor {
                 + ", img=" + img
                 + ", hair=" + hair
                 + ", eyes=" + eyes
+                + ", resume=" + resume
                 + ", traits=" + traits
+                + ", roles=" + roles
+                + ", languages=" + languages
                 + "]";
     }
 

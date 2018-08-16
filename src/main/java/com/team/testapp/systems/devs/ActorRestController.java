@@ -45,10 +45,10 @@ public class ActorRestController {
         return new ResponseEntity<>(actors, HttpStatus.OK);
     }
 
-    // @GetMapping("/api/actordata")
-    // public ResponseEntity<List<Actor>> apiActorsData() {
-    //     return new ResponseEntity<>(actorRepository.findAll(), HttpStatus.OK);
-    // }
+    @GetMapping("/api/actordata")
+    public ResponseEntity<List<Actor>> apiActorsData() {
+        return new ResponseEntity<>(actorRepository.findAll(), HttpStatus.OK);
+    }
 
     @PostMapping("/api/saveactor")
     public ResponseEntity<Actor> saveActor(@RequestBody Actor actor) {

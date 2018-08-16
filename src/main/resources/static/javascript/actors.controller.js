@@ -6,7 +6,7 @@ function actorsController($scope, $http, $uibModal) {
     $scope.init = function() {
     // Getting Local JSON Data
 
-        $http.get("http://localhost:8080/dev/api/actors").
+        $http.get("http://localhost:8080/dev/api/actordata").
             then(function(response) {
                 $scope.actors = response.data;
         });

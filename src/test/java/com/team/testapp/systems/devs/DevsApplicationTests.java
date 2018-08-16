@@ -14,6 +14,9 @@ public class DevsApplicationTests {
     @Autowired
     private ActorRepository actorRepository;
 
+    @Autowired
+    private TraitRepository traitRepository;
+
 	@Test
 	public void contextLoads() {
         System.out.println("message test" + actorRepository);
@@ -22,6 +25,18 @@ public class DevsApplicationTests {
         for (Actor a : actors) {
             System.out.println(a);
         }
+
+        System.out.println(".............................");
+
+        List<Trait> traits = traitRepository.findAll();
+        for (Trait t : traits) {
+            System.out.println(t);
+        }
+
+        System.out.println(".............................");
+
+        Actor a = actorRepository.findById(1);
+        System.out.println(a);
 	}
 
 }

@@ -8,7 +8,10 @@
         "img" : "../images/profile-male.jpg",
         "hair" : "Brown",
         "eyes" : "Hazel",
-        "traits": ["funny", "shy"]
+        "resume" : "../images/profile-male.jpg",
+        "traits": ["Grounded", "Smart" , "Warm" , "Mysterious"],
+        "roles": ["Shy/Akward" , "Bratty Millennial" , "Intern/Assistant" , "Funny Best Friend"],
+        "languages" : ["French", "Spanish"]
     },
     {   "id" : 2,
         "name" : "Madison Doyle",
