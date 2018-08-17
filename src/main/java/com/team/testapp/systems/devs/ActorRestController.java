@@ -53,12 +53,18 @@ public class ActorRestController {
     @PostMapping("/api/saveactor")
     public ResponseEntity<Actor> saveActor(@RequestBody Actor actor) {
         Actor a = actorRepository.findById(actor.getId());
-        System.out.println("a = " + a);
+
         System.out.println("actor = " + actor);
         a.setName(actor.getName());
+        a.setHeight(actor.getHeight());
+        a.setHair(actor.getHair());
         a.setEyes(actor.getEyes());
+        a.setDescription(actor.getDescription());
+        a.setTraits(actor.getTraits());
 
-        actorRepository.save(a);
+        System.out.println("a = " + a);
+
+        a = actorRepository.save(a);
 
         return new ResponseEntity<>(a, HttpStatus.OK);
     }

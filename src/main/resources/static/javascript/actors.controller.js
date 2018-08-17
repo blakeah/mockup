@@ -46,6 +46,7 @@ function actorsController($scope, $http, $uibModal) {
             templateUrl: 'newactor',
             scope: $scope,
             size: 'lg',
+
     });
         $scope.close = function() {
             modalInstance.close();
@@ -54,34 +55,23 @@ function actorsController($scope, $http, $uibModal) {
 
     // Edit Actor Form Modal
     $scope.editActor = function(a) {
-        $scope.a = a;
+        $scope.actor = a;
         var modalInstance = $uibModal.open({
             animation: true,
             templateUrl: 'editactor',
+            controller: editActor,
             scope: $scope,
-            size: 'lg',
-    });
-    $scope.close = function() {
-        modalInstance.close();
-    };
+            size: 'lg'
+        });
 
-    modalInstance.result.then(function(data) {
-        // console.log("saving dialogue" , data);
-
-        $scope.a.name = "New Name";
-
-        $http.post("http://localhost:8080/dev/api/saveactor" , $scope.a)
-            .success(function(data) {
-                    console.log('success', data);
-                    })
-            .error(function(data, status, headers, config) {
-                    console.log('error', data);
-                    });
-    });
-        $scope.save = function() {
+        modalInstance.result.then(function(data) {
+            console.log("its saved", data);
+        }, function() {
+            console.log('Escaped modal.');
+        });
+        $scope.close = function() {
             modalInstance.close();
         };
-
     }
 
 
