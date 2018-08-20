@@ -10,10 +10,17 @@ function editActor($scope, $http) {
             .success(function(data) {
                     console.log('success', data);
                     $scope.actor = data;
+
+                    for (var i = 0; i < $scope.actors.length; i++) {
+                        if ($scope.actors[i].id === data.id) {
+                            $scope.actors[i] = data;
+                        }
+                    }
+
                     })
             .error(function(data, status, headers, config) {
                     console.log('error', data);
                     });
-    }    
+    }
 }
 actorApp.controller("editActor", editActor);
