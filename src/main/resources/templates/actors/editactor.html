@@ -1,59 +1,83 @@
-<script type="text/ng-template" id="editactor" th:fragment="copy" >
-        <!-- Modal Header -->
-        <div class="card flex-row flex-wrap" ng-controller="editActor">
-            <div class="card-block-lg px-3 py-3 w-100">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()"><span aria-hidden="true">&times;</span></button>
-                <h4 class="card-title">Edit Actor</h4>
-                <div class="modal-body h-50">
-                    <form>
-                        <div class="col-3 w-100">
-                            <div class="circle">
-                                <!-- User Profile Image -->
-                                <img class="profile-pic" ng-src="{{a.img}}"></img>
-                                <!-- Default Image -->
-                                <!-- <i class="fa fa-user fa-5x"></i> -->
+<script type="text/ng-template" id="editactor" th:fragment="copy">
+    <!-- Modal Header -->
+    <div class="card flex-row flex-wrap" ng-controller="editActor">
+        <div class="card-block-lg px-3 py-3 w-100">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()"><span aria-hidden="true">&times;</span></button>
+            <h4 class="card-title">Edit Actor</h4>
+            <div class="modal-body h-50">
+                <form>
+                    <div class="col-3 w-100">
+                        <div class="circle">
+                            <!-- User Profile Image -->
+                            <img class="profile-pic" ng-src="{{a.img}}"></img>
+                        </div>
+                        <div class="p-image" data-provides="fileinput">
+                            <i class="fa fa-camera upload-button"></i>
+                            <input id="fileupload" class="file-upload" name="attData" multiple="multiple" data-sequential-uploads="true" type="file" accept="image/*"></input>
+                        </div>
+                    </div>
+                    <div class="col-9 w-100 pull-right">
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">First and Last Name</label>
+                            <input type="text" placeholder="enter name" ng-model="a.name" class="form-control col-6" id="recipient-name"></input>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-3">
+                                <label for="actor-height" class="col-form-label">Height</label>
+                                <input type="text" ng-model="a.height" class="form-control col-12" id="actor-height"></input>
                             </div>
-                            <div class="p-image" data-provides="fileinput">
-                                <i class="fa fa-camera upload-button"></i>
-                                <input id="fileupload" class="file-upload" name="attData" multiple="multiple" data-sequential-uploads="true" type="file" accept="image/*"></input>
+                            <div class="col-3">
+                                <label for="actor-hair" class="col-form-label">Hair Color</label>
+                                <input type="text" ng-model="a.hair" class="form-control col-12" id="actor-hair"></input>
+                            </div>
+                            <div class="col-3">
+                                <label for="actor-eyes" class="col-form-label">Eye Color</label>
+                                <input type="text" ng-model="a.eyes" class="form-control col-12" id="actor-eyes"></input>
+                            </div>
+                            <div class="col-3">
+                                <label for="actor-gender" class="col-form-label">Gender</label>
+                                <input type="text" ng-model="a.gender" class="form-control col-12" id="actor-gender"></input>
                             </div>
                         </div>
-                        <div class="col-9 w-100 pull-right">
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">First and Last Name</label>
-                                <input type="text" placeholder="enter name" ng-model="a.name" class="form-control col-6" id="recipient-name"></input>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-3">
-                                    <label for="actor-height" class="col-form-label">Height</label>
-                                    <input type="text" ng-model="a.height" class="form-control col-12" id="actor-height"></input>
-                                </div>
-                                <div class="col-3">
-                                    <label for="actor-hair" class="col-form-label">Hair Color</label>
-                                    <input type="text" ng-model="a.hair" class="form-control col-12" id="actor-hair"></input>
-                                </div>
-                                <div class="col-3">
-                                    <label for="actor-eyes" class="col-form-label">Eye Color</label>
-                                    <input type="text" ng-model="a.eyes" class="form-control col-12" id="actor-eyes"></input>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="description" class="col-form-label">Brief Description</label>
-                                <textarea class="form-control" ng-model="a.description" id="description"></textarea>
-                            </div>
-                            <div class="form-group row">
+                        <div class="form-group">
+                            <label for="description" class="col-form-label">Brief Description</label>
+                            <textarea class="form-control" ng-model="a.description" id="description"></textarea>
+                        </div>
+                        <!-- <div class="form-group row">
                                 <div class="col-12">
                                     <label for="trait1" class="col-form-label">Traits</label>
                                     <input type="text" ng-model="a.traitstring" class="form-control col-md-12" placeholder="" id="trait1"></input>
                                 </div>
+                            </div> -->
+                        <label for="traits" class="col-form-label">Traits</label>
+                        <div class="form-group row">
+                            <div class="col-4">
+                                <div class="input-group-append">
+                                    <input type="text" placeholder="New Trait" class="form-control" id="new-trait">
+                                    <a class="input-group-text" id="basic-addon2"><i class="fa fa-plus"></i></a>
+                                    </input>
+                                </div>
                             </div>
+                            <div class="col-8">
+                                <span data-ng-repeat="t in a.traits">
+                                        <div class="badge badge-secondary"><h6>{{t.description}}<button type="button" class="close" ng-model="t.description" ng-click="removetrait()" style="color: #fff; font-size: 1.0rem; padding-left: 5px;"><span aria-disabled="true">&times;</span></button>
+                                </h6>
+                            </div>
+                            </span>
                         </div>
-                    </form>
-                </div>
+                    </div>
             </div>
-            <div class="card-footer w-100 text-muted">
-                <button type="button" class="btn btn-danger" ng-click="close()">Close</button>
-                <button type="button" class="btn btn-info pull-right" ng-click="save(a)">Save</button>
+            </form>
+        </div>
+    </div>
+    <div class="card-footer w-100 text-muted">
+        <button type="button" class="btn btn-danger" ng-click="close()">Close</button>
+        <div class="col-xs-4 col-sm-4 pull-right " ng-cloak="true" ng-show="submissionSuccess &amp;&amp; !detailForm.$dirty">
+            <div class="alert alert-success" role="alert" style="padding-top: 7px; padding-bottom: 7px; margin-bottom: 0px;">
+                Your updates were saved!
             </div>
         </div>
+        <button type="button" class="btn btn-info" ng-click="save(a)">Save</button>
+    </div>
+    </div>
 </script>

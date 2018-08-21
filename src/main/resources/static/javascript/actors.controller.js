@@ -11,6 +11,7 @@ function actorsController($scope, $http, $uibModal) {
                 $scope.actors = response.data;
         });
 
+        $scope.submissionSuccess = false;
     }
     // Getting External JSON Data
 
@@ -44,6 +45,7 @@ function actorsController($scope, $http, $uibModal) {
         var modalInstance = $uibModal.open({
             animation: true,
             templateUrl: 'newactor',
+            controller: newActor,
             scope: $scope,
             size: 'lg',
 
