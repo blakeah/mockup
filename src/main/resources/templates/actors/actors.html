@@ -17,7 +17,7 @@
             <script th:replace="actors/newactor  :: copy"></script>
             <script th:replace="actors/editactor  :: copy"></script>
             <script th:replace="actors/actorview  :: copy"></script>
-
+            <script th:replace="actors/deleteactor  :: copy"></script>
             <div class='card-block'>
                 <h3 class='tab-headings'>Actors Database</h3>
             </div>
@@ -63,7 +63,7 @@
                                 <ul class="list-inline">
                                     <li class="list-inline-item">Hair:&nbsp;<b>{{a.hair}}</b></li>
                                     <li class="list-inline-item">Eyes:&nbsp;<b>{{a.eyes}}</b></li>
-                                </ul>                                
+                                </ul>
                                 <span data-ng-repeat="t in a.traits">
                                         <div class="badge badge-secondary">{{t.description}}</div>
                                 </span>
@@ -75,9 +75,13 @@
                                 <button type="button" class="btn btn-link btn-lg" ng-click="viewActor(a)">
                                     	<i class="fa fa-eye" aria-hidden="true"></i>
                                 </button>
+                                <button type="button" class="btn btn-link btn-lg pull-right" ng-click="deleteActor(a)">
+                                    	<i class="fa fa-trash danger" aria-hidden="true"></i>
+                                </button>
                                 <button type="button" class="btn btn-link btn-lg pull-right" ng-click="editActor(a)">
                                     	<i class="fa fa-edit" aria-hidden="true"></i>
                                 </button>
+
                             </div>
                         </div>
                     </div>

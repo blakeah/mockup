@@ -6,7 +6,11 @@ function actorsController($scope, $http, $uibModal) {
     $scope.init = function() {
     // Getting Local JSON Data
 
-        $http.get("http://localhost:8080/dev/api/actordata").
+        // $http.get("http://localhost:8080/dev/api/actordata").
+        //     then(function(response) {
+        //         $scope.actors = response.data;
+        // });
+        $http.get("/dev/api/actordata").
             then(function(response) {
                 $scope.actors = response.data;
         });
@@ -39,6 +43,21 @@ function actorsController($scope, $http, $uibModal) {
             modalInstance.close();
         };
     }
+    $scope.deleteActor = function(a) {
+        $scope.a = a;
+        var modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl: 'deleteactor',
+            scope: $scope,
+            size: 'lg',
+    });
+        $scope.close = function() {
+            modalInstance.close();
+        };
+        $scope.delete = function() {
+            
+        };
+    }
 
     // New Actor Form Modal
     $scope.newActor = function() {
@@ -53,6 +72,7 @@ function actorsController($scope, $http, $uibModal) {
         $scope.close = function() {
             modalInstance.close();
         };
+
     }
 
     // Edit Actor Form Modal
@@ -66,13 +86,9 @@ function actorsController($scope, $http, $uibModal) {
             size: 'lg'
         });
 
-        modalInstance.result.then(function(data) {
-            console.log("its saved", data);
-        }, function() {
-            console.log('Escaped modal.');
-        });
         $scope.close = function() {
             modalInstance.close();
+            console.log("Closing");
         };
     }
 

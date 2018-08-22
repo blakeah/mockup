@@ -1,5 +1,5 @@
 CREATE TABLE actor (
-   id          INTEGER  NOT NULL PRIMARY KEY
+   id          INTEGER  NOT NULL AUTO_INCREMENT PRIMARY KEY
   ,name        VARCHAR(100) NOT NULL
   ,gender      VARCHAR(9) NOT NULL
   ,description VARCHAR(429) NULL
@@ -12,7 +12,7 @@ CREATE TABLE actor (
 );
 
 CREATE TABLE trait (
-    id      INTEGER NOT NULL PRIMARY KEY,
+    id      INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     description     VARCHAR(100) NOT NULL
 );
 

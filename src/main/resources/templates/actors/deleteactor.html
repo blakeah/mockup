@@ -1,0 +1,19 @@
+<script type="text/ng-template" id="deleteactor" th:fragment="copy">
+    <div>
+        <!-- Modal Header -->
+        <div class="card flex-row flex-wrap">
+            <div class="card-header border-0  w-25 p-3">
+                <img class="img-thumbnail" ng-src="{{a.img}}"></img>
+            </div>
+            <div class="card-block px-3 py-3 w-75">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()"><span aria-hidden="true">&times;</span></button>
+                <h4 class="card-title">Are you sure you want to delete {{a.name}}?</h4>
+            </div>
+            <div class="card-footer w-100 text-muted">
+                <!-- <p>Optional Text</p> -->
+                <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="close()">Close</button>
+                <button type="button" class="btn btn-disabled pull-right" ng-click="delete()">Delete Actor</button>
+            </div>
+        </div>
+    </div>
+</script>

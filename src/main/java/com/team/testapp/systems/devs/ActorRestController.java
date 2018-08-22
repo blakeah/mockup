@@ -43,6 +43,27 @@ public class ActorRestController {
         return new ResponseEntity<>(actorRepository.findAll(), HttpStatus.OK);
     }
 
+    @PostMapping("/api/addactor")
+    public ResponseEntity<Actor> addActor(@RequestBody Actor actor) {
+        Actor a = new Actor();
+
+        System.out.println("actor = " + actor);
+        a.setName(actor.getName());
+        a.setHeight(actor.getHeight());
+        a.setImg(actor.getImg());
+        a.setHair(actor.getHair());
+        a.setEyes(actor.getEyes());
+        a.setGender(actor.getGender());
+        a.setDescription(actor.getDescription());
+        a.setTraits(actor.getTraits());
+
+        System.out.println("a = " + a);
+
+        a = actorRepository.save(a);
+
+        return new ResponseEntity<>(a, HttpStatus.OK);
+    }
+
     @PostMapping("/api/saveactor")
     public ResponseEntity<Actor> saveActor(@RequestBody Actor actor) {
         Actor a = actorRepository.findById(actor.getId());
@@ -50,6 +71,7 @@ public class ActorRestController {
         System.out.println("actor = " + actor);
         a.setName(actor.getName());
         a.setHeight(actor.getHeight());
+        a.setImg(actor.getImg());
         a.setHair(actor.getHair());
         a.setEyes(actor.getEyes());
         a.setGender(actor.getGender());
