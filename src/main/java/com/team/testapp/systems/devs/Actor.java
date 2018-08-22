@@ -136,11 +136,16 @@ public class Actor {
     public void setTraits(List<Trait> traits) {
         this.traits = traits;
     }
+    @Transient
+    public void addTrait(Trait trait){
+        this.traits.add(trait);
+    }
 
     @Override
     public String toString() {
         return "Actor [id=" + id
                 + ", name=" + name
+                + ", traits=" + traits
                 + ", gender=" + gender
                 + ", description=" + description
                 + ", height=" + height

@@ -15,6 +15,8 @@ function actorsController($scope, $http, $uibModal) {
                 $scope.actors = response.data;
         });
 
+
+
         $scope.submissionSuccess = false;
     }
     // Getting External JSON Data
@@ -43,22 +45,6 @@ function actorsController($scope, $http, $uibModal) {
             modalInstance.close();
         };
     }
-    $scope.deleteActor = function(a) {
-        $scope.a = a;
-        var modalInstance = $uibModal.open({
-            animation: true,
-            templateUrl: 'deleteactor',
-            scope: $scope,
-            size: 'lg',
-    });
-        $scope.close = function() {
-            modalInstance.close();
-        };
-        $scope.delete = function() {
-            
-        };
-    }
-
     // New Actor Form Modal
     $scope.newActor = function() {
         var modalInstance = $uibModal.open({
@@ -91,8 +77,24 @@ function actorsController($scope, $http, $uibModal) {
             console.log("Closing");
         };
     }
+    // Delete Actor Form Modal
+    $scope.deleteActor = function(a) {
+        $scope.actor = a;
+        var modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl: 'deleteactor',
+            controller: deleteActor,
+            scope: $scope,
+            size: 'lg',
+    });
 
 
+        $scope.close = function() {
+            
+            modalInstance.close();
+            console.log("Closing");
+        };
 
+    }
 }
 actorApp.controller("actorsController", actorsController);
