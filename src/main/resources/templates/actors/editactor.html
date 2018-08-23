@@ -49,13 +49,16 @@
                                     <input type="text" ng-model="a.traitstring" class="form-control col-md-12" placeholder="" id="trait1"></input>
                                 </div>
                             </div> -->
-                        <label for="traits" class="col-form-label">Traits</label>
+                        <label for="traits" class="col-form-label">Add Traits</label>
                         <div class="form-group row">
                             <div class="col-4">
                                 <div class="input-group-append">
-                                    <input type="text" placeholder="New Trait" class="form-control" id="new-trait">
+                                    <select name="traits" form="traits">
+                                        <option ng-repeat="t in a.traits">{{t.description}}</option>
+                                    </select>
+                                    <!-- <input type="text" placeholder="New Trait" class="form-control" id="new-trait">
                                     <a class="input-group-text" id="basic-addon2"><i class="fa fa-plus"></i></a>
-                                    </input>
+                                    </input> -->
                                 </div>
                             </div>
                             <div class="col-8">

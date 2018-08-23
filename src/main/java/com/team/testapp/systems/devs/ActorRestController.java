@@ -46,7 +46,7 @@ public class ActorRestController {
     @PostMapping("/api/deleteactor")
     public ResponseEntity<Actor> deleteActor(@RequestBody Actor actor) {
         Actor a = actorRepository.findById(actor.getId());
-        if( a != null ) {
+        if (a != null) {
             actorRepository.delete(a);
         }
         System.out.println("actor = " + actor);

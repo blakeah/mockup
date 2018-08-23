@@ -9,7 +9,6 @@ function deleteActor($scope, $http) {
                 $http.post("/dev/api/deleteactor" , a)
                     .success(function(data) {
                             console.log('success', data);
-
                             })
                     .error(function(data, status, headers, config) {
                             console.log('error', data);

@@ -10,6 +10,9 @@ function editActor($scope, $http) {
 
     $scope.save = function(a) {
 
+        //Replaces Traits with empty data
+        // a.traits = [];
+
         $scope.submissionSuccess = true;
         console.log("saving" , a);
 

@@ -34,7 +34,7 @@ public class ActorRepositoryTest {
 
         Actor a = actorRepository.findById(1);
         assertThat(a.getId(), equalTo(1));
-        assertThat(a.getName(), equalTo("Nathan Hunts"));
+        assertThat(a.getName(), equalTo("Nathan Hunt"));
         actorRepository.delete(a);
 
         printActors();
