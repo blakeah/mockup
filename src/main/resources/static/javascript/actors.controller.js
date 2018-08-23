@@ -56,6 +56,7 @@ function actorsController($scope, $http, $uibModal) {
 
     });
         $scope.close = function() {
+            window.location.reload();
             modalInstance.close();
         };
 
@@ -87,11 +88,9 @@ function actorsController($scope, $http, $uibModal) {
             scope: $scope,
             size: 'lg',
     });
-
-
         $scope.close = function() {
-            
             modalInstance.close();
+            window.location.reload();
             console.log("Closing");
         };
 

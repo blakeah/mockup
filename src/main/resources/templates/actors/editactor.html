@@ -72,13 +72,14 @@
         </div>
     </div>
     <div class="card-footer w-100 text-muted">
-        <button type="button" class="btn btn-danger" ng-click="close()">Close</button>
+        <button type="button" class="btn btn-success pull-right" ng-click="save(a)">Save</button>
+        <button type="button" class="btn btn-disabled" ng-click="close()">Close</button>
         <div class="col-xs-4 col-sm-4 pull-right " ng-cloak="true" ng-show="submissionSuccess &amp;&amp; !detailForm.$dirty">
             <div class="alert alert-success" role="alert" style="padding-top: 7px; padding-bottom: 7px; margin-bottom: 0px;">
                 Your updates were saved!
             </div>
         </div>
-        <button type="button" class="btn btn-info" ng-click="save(a)">Save</button>
+
     </div>
     </div>
 </script>

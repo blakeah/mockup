@@ -12,8 +12,13 @@
             </div>
             <div class="card-footer w-100 text-muted">
                 <!-- <p>Optional Text</p> -->
-                <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="close()">Close</button>
-                <button type="button" class="btn btn-disabled pull-right" ng-click="delete()">Delete Actor</button>
+                <button type="button" class="btn btn-disabled" data-dismiss="modal" ng-click="close()">Close</button>
+                <button type="button" class="btn btn-danger pull-right" ng-click="delete()">Delete Actor</button>
+                <div class="col-xs-4 col-sm-4 pull-right " ng-cloak="true" ng-show="submissionSuccess &amp;&amp; !detailForm.$dirty">
+                    <div class="alert alert-success" role="alert" style="padding-top: 7px; padding-bottom: 7px; margin-bottom: 0px;">
+                        Actor Removed!
+                    </div>
+                </div>
             </div>
         </div>
     </div>

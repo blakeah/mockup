@@ -9,9 +9,11 @@ function newActor($scope, $http) {
             eyes : " ",
 
     };
+
     $scope.add = function() {
         var a = $scope.a;
         console.log("adding" , a);
+        $scope.submissionSuccess = true;
 
         $http.post("/dev/api/addactor" , a)
             .success(function(data) {
